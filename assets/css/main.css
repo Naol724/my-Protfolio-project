@@ -1677,6 +1677,13 @@ section,
   transform: translateY(0);
 }
 
+.portfolio-item .portfolio-info .content h4 {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 1.5 !important;
+}
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
