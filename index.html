@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 
   <!-- Main Title -->
   <title>Naol Gonfa | Full Stack Web Developer & AI Engineering Enthusiast</title>
@@ -46,26 +60,28 @@
 </head>
 
 
-  <!-- Favicons -->
-  <link href="assets/img/Nilegt_fav.png" rel="icon">
-  <link href="assets/img/apple-icon-57x57(1).png" rel="apple-touch-icon">
+<!-- Favicons -->
+<link href="assets/img/Nilegt_fav.png" rel="icon">
+<link href="assets/img/apple-icon-57x57(1).png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
+<!-- =======================================================
   * Template Name: SnapFolio
   * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
   * Updated: Jul 21 2025 with Bootstrap v5.3.7
@@ -75,6 +91,10 @@
 </head>
 
 <body class="index-page">
+
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle light / dark mode">
+    <i class="bi bi-sun-fill" aria-hidden="true"></i>
+  </button>
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -87,10 +107,12 @@
           <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
           <li><a href="#resume"><i class="bi bi-images navicon"></i> Resume</a></li>
           <li><a href="#portfolio"><i class="bi bi-hdd-stack navicon"></i> Portfolio</a></li>
-          <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -119,8 +141,10 @@
         <a href="https://www.instagram.com/nilegt_/" target="_blank" rel="noopener noreferrer" class="instagram">
           <i class="bi bi-instagram"></i>
         </a>
-        <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank" rel="noopener noreferrer"><i class="bi bi-stack-overflow"></i></a>
-        <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank" rel="noopener noreferrer" class="linkedin">
+        <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank" rel="noopener noreferrer"><i
+            class="bi bi-stack-overflow"></i></a>
+        <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank" rel="noopener noreferrer"
+          class="linkedin">
           <i class="bi bi-linkedin"></i>
         </a>
       </div>
@@ -147,12 +171,16 @@
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
               <div class="hero-text">
                 <h1><span class="accent-text">Naol</span> Gonfa</span></h1>
-                <p class="lead">I'm a <span class="typed" data-typed-items="Full-Stack Developer, React and Node.js Developer, Cloud and Scalable Web App Builder"></span></p>
+                <p class="lead">I'm a <span class="typed"
+                    data-typed-items="Full-Stack Developer, React and Node.js Developer, Cloud and Scalable Web App Builder"></span>
+                </p>
                 <p class="description">
-                Computer Science student at Haramaya University with strong expertise in building modern, scalable, and user-focused web
-                applications.
-                Experienced in React, Node.js, JavaScript, Tailwind CSS, and Flutter.
-                I focus on writing clean, maintainable code and delivering solutions that solve real-world business problems.
+                  Computer Science student at Haramaya University with strong expertise in building modern, scalable,
+                  and user-focused web
+                  applications.
+                  Experienced in React, Node.js and Tailwind CSS.
+                  I focus on writing clean, maintainable code and delivering solutions that solve real-world business
+                  problems.
                 </p>
 
                 <div class="hero-actions">
@@ -161,11 +189,13 @@
                 </div>
 
                 <div class="social-links">
-                  <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank"><i class="bi bi-stack-overflow"></i></a>
+                  <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank"><i
+                      class="bi bi-stack-overflow"></i></a>
                   <a href="https://t.me/nilegt" target="_blank" class="telegram">
                     <i class="bi bi-telegram"></i></a>
-                  <a href="https://github.com/Naol724/Naol724"  target="_blank"><i class="bi bi-github"></i></a>
-                  <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/"  target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/Naol724/Naol724" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank"><i
+                      class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -232,26 +262,15 @@
               </div>
 
               <div class="description">
-                <p>I am a dedicated Full-Stack Developer focused on building scalable, secure, and user-centered web applications. My goal is to transform ideas into high-performance digital products that deliver measurable value for businesses and
-                communities.</p>
+                <p>I am a dedicated Full-Stack Developer focused on building scalable, secure, and user-centered web
+                  applications. My goal is to transform ideas into high-performance digital products that deliver
+                  measurable value for businesses and
+                  communities.</p>
 
-                <p>With hands-on experience in both frontend and backend development, I write clean, maintainable code and follow modern development practices. I continuously improve my skills by working on real-world projects and exploring new
-                technologies.</p>
-              </div>
-
-              <div class="stats-grid">
-                <div class="stat-item">
-                  <div class="stat-number">10+</div>
-                  <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">1+</div>
-                  <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">98%</div>
-                  <div class="stat-label">Strong Problem-Solving Focus</div>
-                </div>
+                <p>With hands-on experience in both frontend and backend development, I write clean, maintainable code
+                  and follow modern development practices. I continuously improve my skills by working on real-world
+                  projects and exploring new
+                  technologies.</p>
               </div>
 
               <div class="details-grid">
@@ -268,7 +287,7 @@
                 <div class="detail-row">
                   <div class="detail-item">
                     <span class="detail-label">Education</span>
-                    <span class="detail-value">BSc in Computer Science,   Haramaya University</span>
+                    <span class="detail-value">BSc in Computer Science, Haramaya University</span>
                   </div>
                   <div class="detail-item">
                     <span class="detail-label">Languages</span>
@@ -308,7 +327,8 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-emoji-smile"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Happy Clients</p>
               </div><!-- End Stats Item -->
 
@@ -316,7 +336,8 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-journal-richtext"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Projects</p>
               </div><!-- End Stats Item -->
 
@@ -324,7 +345,8 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-headset"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Hours Of Support</p>
               </div><!-- End Stats Item -->
 
@@ -332,7 +354,8 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-people"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Hard Workers</p>
               </div><!-- End Stats Item -->
             </div>
@@ -343,224 +366,147 @@
 
     </section><!-- /Stats Section -->
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills-stack section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Technologies and tools I work with across the stack.</p>
+        </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>A combination of modern technologies and practical experience used to build scalable, secure, and high-performance
-        applications.</p>
-      </div><!-- End Section Title -->
+        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="skills-stack-title">Frontend</h3>
+          <div class="skills-icon-grid" role="list">
+            <div class="skill-icon-cell" role="listitem" title="HTML5">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="CSS3">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="JavaScript">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="React">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Bootstrap">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell skill-icon-cell--tailwind" role="listitem" title="Tailwind CSS">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40" alt="">
+            </div>
+          </div>
+        </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="120">
+          <h3 class="skills-stack-title">Backend</h3>
+          <div class="skills-icon-grid" role="list">
+            <div class="skill-icon-cell" role="listitem" title="Node.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Java">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="C#">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="REST API">
+              <img src="https://cdn.simpleicons.org/swagger/85EA2D" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="PHP">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="40" height="40" alt="">
+            </div>
+          </div>
+        </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-              <h3>Front-end Development</h3>
-              <div class="skills-animation">
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>HTML/CSS </h4>
-                    <span class="skill-percentage">90%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Strong foundation in semantic HTML5, responsive design, Flexbox, Grid, and modern CSS best practices.</div>
-                </div>
+        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="160">
+          <h3 class="skills-stack-title">Database</h3>
+          <div class="skills-icon-grid" role="list">
+            <div class="skill-icon-cell" role="listitem" title="MongoDB">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Firebase">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="MySQL">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="PostgreSQL">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Oracle">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Microsoft SQL Server">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="40" height="40" alt="">
+            </div>
+          </div>
+        </div>
 
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>JavaScript</h4>
-                    <span class="skill-percentage">80-85%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Proficient in ES6+, asynchronous programming, API integration, and building dynamic user interfaces.</div>
-                </div>
+        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="skills-stack-title">Middleware &amp; tooling</h3>
+          <div class="skills-icon-grid skills-icon-grid--dense" role="list">
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="CORS">
+              <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="body-parser">
+              <i class="bi bi-braces" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="JSON Web Token">
+              <i class="bi bi-key-fill" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="Multer">
+              <i class="bi bi-cloud-upload-fill" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="JWS">
+              <i class="bi bi-shield-lock-fill" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="OAuth">
+              <i class="bi bi-lock-fill" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="bcrypt">
+              <i class="bi bi-fingerprint" aria-hidden="true"></i>
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="webpack">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="40" height="40" alt="">
+            </div>
+            <div class="skill-icon-cell" role="listitem" title="Babel">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" width="40" height="40" alt="">
+            </div>
+          </div>
+        </div>
 
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>React</h4>
-                    <span class="skill-percentage">75-80%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Experience building scalable React applications using Hooks, reusable components, routing, and API integration.</div>
-                </div>
+        <div class="skills-tools-marquee-wrap" data-aos="fade-up" data-aos-delay="240">
+          <h3 class="skills-stack-title skills-stack-title--marquee">Tools</h3>
+          <p class="skills-marquee-hint">Deployment, testing, and day-to-day workflow.</p>
+          <div class="tools-marquee" aria-label="Scrolling tools">
+            <div class="tools-marquee-track">
+              <div class="tools-marquee-set">
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/vercel/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Vercel</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" width="28" height="28" alt=""><span class="tools-marquee-label">Netlify</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/postman/FF6C37" width="28" height="28" alt=""><span class="tools-marquee-label">Postman</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jest/C21325" width="28" height="28" alt=""><span class="tools-marquee-label">Jest</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="28" height="28" alt=""><span class="tools-marquee-label">Jira</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text" title="Kiro"><span class="tools-marquee-label">Kiro</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/cursor/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Cursor</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text" title="Windsurf"><span class="tools-marquee-label">Windsurf</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" width="28" height="28" alt=""><span class="tools-marquee-label">Google Agent</span></span>
               </div>
-            </div><!-- End Frontend Skills -->
-          </div>
-
-          <div class="col-lg-6">
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
-              <h3>Back-end Development</h3>
-              <div class="skills-animation">
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>Node.js</h4>
-                    <span class="skill-percentage">70-75%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Building RESTful APIs using Node.js and Express, authentication systems, and server-side application logic.</div>
-                </div>
-
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>Python</h4>
-                    <span class="skill-percentage">65-70%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Backend development with Python, including Django frameworks and scripting for automation and data processing.</div>
-                </div>
-
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4>SQL</h4>
-                    <span class="skill-percentage">65-70%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="skill-tooltip">Relational database design, query optimization, and efficient data modeling using SQL.</div>
-                </div>
+              <div class="tools-marquee-set" aria-hidden="true">
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/vercel/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Vercel</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" width="28" height="28" alt=""><span class="tools-marquee-label">Netlify</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/postman/FF6C37" width="28" height="28" alt=""><span class="tools-marquee-label">Postman</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jest/C21325" width="28" height="28" alt=""><span class="tools-marquee-label">Jest</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="28" height="28" alt=""><span class="tools-marquee-label">Jira</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text" title="Kiro"><span class="tools-marquee-label">Kiro</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/cursor/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Cursor</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text" title="Windsurf"><span class="tools-marquee-label">Windsurf</span></span>
+                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" width="28" height="28" alt=""><span class="tools-marquee-label">Google Agent</span></span>
               </div>
-            </div><!-- End Backend Skills -->
+            </div>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- New section i create as the skill -->
-    <div class=" container justify-content-between  ">
-      <!-- skill part start here -->
-      <div class="row text-center bg-secondar bg-dark m-1 py-4 rounded-4">
-        <!-- html photo start -->
-        <div class="col-6 col-md-4 col-lg-3  ">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="HTML5 icon"></div>
-          <p class="">HTML5</p>
-        </div>
-        <!-- html photo end -->
-    
-        <!-- css photo start -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="CSS3 icon"></div>
-          <p class="">CSS3</p>
-        </div>
-        <!-- css photo end -->
-    
-        <!-- js photo start -->
-        <div class="col-6 col-md-4 col-lg-3 ">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="JS icon"></div>
-          <p class="">JS</p>
-        </div>
-        <!-- js photo end -->
-    
-        <!-- Bootstrap photo start -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="Bootstrap icon"></div>
-          <p class="">Bootstrap</p>
-        </div>
-        <!-- Bootstrap photo end -->
-
-        <!-- Tailwind css photo start -->
-        <div class="col-6 col-md-4 col-lg-3 ">
-          <div class="m-2"><img src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg"
-              alt="Tailwind CSS" width="80">
-          </div>
-          <p class="">Tailwind </p>
-        </div>
-        <!-- Tailwind css photo end -->
-    
-        <!-- Git photo start -->
-        <div class="col-6 col-md-4 col-lg-3 ">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="Git icon"></div>
-          <p class="">Git</p>
-        </div>
-        <!-- Git photo end -->
-    
-        <!-- Noode photo start -->
-        <div class="col-6 col-md-4 col-lg-3  ">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="Node.js icon"></div>
-          <p class="">Node.js</p>
-        </div>
-        <!-- Noode photo end -->
-    
-        <!-- express photo start -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="m-2"><img
-              src="data:image/png;base64,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"
-              alt="Express.js icon"></div>
-          <p class="">Express.js</p>
-        </div>
-        <!-- express photo start -->
-    
-        <!-- React.js photo start -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="m-2"><img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA4CAYAAABNGP5yAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAA4nSURBVHgBvVt5jFVXGT/vvlmZfWU2Ck4ppKtFQKCVxVJrW1qxQKiGapvUJbiEVGKMMSXRv7Sp2jbGqg3GYmsrQhFotS50hEqhQIU2UKTIzsDsw8y82d+719/vnnPm3vfmzcw9l4SPPObNnXfO+bbzLb9zXsQBiZAUx8h/XnHEO922uDzsiAR+z7KEqMmMiBtyI2JBYURMzY6IiAhPFwcd8Xa3I471Oe4a5DaKCWuzImIh5l9cZImMq1ggElYBsYQQv21OiMO9zpgCktFP5EfE58ssUZ1pxuU5CP5Ghy2OYH7InXYNMn7LpIj4Tm00tJJDKYCWfr4pIf4T84bOzBWiFEK2Dwvx0YAjuVNk47UUlnqkwhKRyMRzv9yaEHt7ILid/LcZOUKUwfJNQ444M+A9vxHeth5KsEJoIUOEoA/gju/FpOULokKsq46K+lxv9StxIQ7FbPEPbI8WmA+7QjR02eJ4vy3WVkXFlOz0nF6A1Tc22eL8kKe9MnD42RJL3FFoiUmW99lTUPJzlxOiB2sd73dcT6G3mVIoD/hJY0Kc6JPD1tdExc156RemNf+N+PBqmy0GlTUnQWGrsCWWFFlJn93bBeFhee05OZhyFTzmrpTP+ekoePgpeOHqM2GA79VFhSkZewCMKM4PSC7rweVYwpMYAxikbgJzv2m2Xav1QcbftdiiFz/vL5XCvdFpix3ttis8Z74Z+/rRSktUTBA3uP+nZoOfQb4wN6aYZAkjMlZAM9yzFwtxnRtygrlcBfbtD6ZExUuttmi4Yrtjt0DgnoTMJG91Sfeg8J8ptsTKcktkB/Tm2/IsCG+7PLViu03NNtsGxgpoG/Yicm2WMCIGwUqsuBXRnQHu71e8KAddiMdh9UVFZiaszJQ/Oap1SLgeYUKGDiNEj+0pID9EAr4HAY1B00+c5Qk8MxWelOcL/T22MCbjFRNXM1jR6YHk2oGu74/8JhT1TZQIMYWxDP49kwhRQ+1GtOf+50i+tBO9hme7u8xN6DdImIrQWAH5llfj9BvyewL5+sWWhLsoC6KvTrbEwwh4EcXIH5Euj/WZKbXfp4F88yxoroCSTO89A2JQakXB8ovLkluKuEwVN0sR9R8qk2wMQKHPXEqIjnhwJXQov+f/pSHKOmMFFGPT6UFXEsHGULDnIXyv+vw8uNHnSr2lH8D7TxbI3ynPs5dsEVQFlwblT44uuhYKoJtpV2PxEYR2IO2dUcVTNWqCr1SN7uCYIqepHM6S+NXWYPuLpTYp15LGMSVjnWVjoSoI0YP9TAXQW/3CsORtBFNtQ7IwaY/LQkdrmoHzh+cT6PAct0mKqFcGgkLMF8Z3YQwru5os9gMR17psswt8HNuOZ4RaKC96rZoh9uIn+2Wb+i8wOqwYuQihuyBwLzhL2DLQ6QCnqcWNG+k8J/kZhdvb7W0FpnvmfCpiCpTChoqOOGTLv9VmhpBehGiGWM+zdj8S84JPkKW5/ektVAbrdXoSPYer0/A0ZL96T1mC7E3/2rejE1yOwDo1x0wRgRTAaE+XpNBNw+kBEApYCpNMhnfU4MW9+aFKabl4vgGdWhkkmyhX06Kd0MKPsE10mmVzxP3dAg3qbeWm0pSx/Hg1stR8BNQ5BRHXUyeicRXwXwiwGbn59KCTZBE9IKLeP4Z8PhtNiQ6OLOq+fzYuOuPy70+gZb4tz8wyVN5TjbJmKIbb/3hahtDyEI36AP3/C82JER40P8L3nrDccqTYG3PHXjttDLgECV5GFOY+127LRQqjctI5SGONg3IruAw4yUUIldYRl0zMh2uaCk+6CVZfgHXeBbBCgGUz+HmkUpqBaw05nieymCqBax3EZ4kRDMnOWnwE/p+6mHDb8TUYW5PGI0YpYEt7QuwCkjPoy0IMPGsqoi7sVaBCbS8Y3Nkpo/t+wFdLijzl7emyRyyzoiJEeaZoGax3GH0uPWo3AuLS4oibRoVak8StNxfuzkwxD/AUP3sIf9vRkRDNqnMlYsQtRWRJF12jFEBLvwA46kDM02wdou0qaJc9dyrlQa7pCDhsbM7CG87hJwPQNtT0cQVsfJmgRhofowu/2yPjCaM9U928AmtUKcv1V2D9V2B9BsfX4FnfxHY6i7X+p+qKGTlSeE3Uzx2FVEaGq7zt7Y5ohFaomJ2oR4hnrKmMulBekgJ+DZBT43yMwq62SscHMefkSwXQ5WiRbgh2MCbjxWQEoyWFoxVHQOT3aYqcrVAcK8L7S5LHECB5C2OYPt+He1Nx7BdstfHvLEzPIB2VW3V2vhBvwlP/3C7TNQ2cwL9vVEe9FP1XfOCQSmsMOERYV5RNjOB+mpi84pf1ALs8HS8eKouOGv8XWGDTGBUey+U/wcINKR0hp1iJuTgnPYu86uxCw08UX/jX+6BUYpe6VKasVArJYrVF7bgVGf5bhw/OyA0WtJjLF6kannn8gqrKWNLOTUFo6R07VdAcj9lNLRIq8xP3+MdUmcyCSzdLC+FhpQF74BmIWUSkdXFGmYlPWgd7ZEVHIlJriqktSjmZoV4ZrVMx+v09dlJgHYsi6rOptBq9gr/UJct3F5vxSsMuhtI4ljITurcuKySGS348RLq6LluMNDGk6/G+Pk01pru2INQ0NPoZYe/rfGmMgGx1ljm/t8ITdN3QhLhi+S01ZJuBESPkm2OsuJFp0HeOBW1FUiudEJTqRVaVQnbJ3/E+YUz0IBZMmnimdyINqlOZKQJTbRpk97Qv9ZGYCoO2437iCZK2BdOvNQc5XjdSjOQn+s0m5emw3xi03ub20XuY9XmQDp+BdX5BsrvQMV9qsZPKccbBPd1mmBwPdDTuSJlZvls8quLprQYpfwXk5mRAJbDWf1sFrJIMxgOpCoIfB3qS52DhwdOe8Wbm3x5ELVCQUhAdQLA6q6zNNfTW39PlBAqspJPwymcgm5aTMlN2V6nMkywaSF1IDU+jCWG+nUgN78Od4ooBHlNxngyVZrZ1JEaNZ92wGgtnjxEPvlQxuhDiHNvapZdxqZUYz3l0XdAwAZIsx9viaQjPnoLEAu5etc5IJciylY+obaYIFiXvwLrL0ePenpe+jd2rXNBSwk1DZD4Us1BRsuQUOB22xT3FyQLdBwt/Cp/lOswMdMWKLIkTpkN1uS1bVAvO2uJW8EIPaeiWrTOr13tLRFpix8ji7OKgh10QeyQarcUZUQAnXVttiap2eWTlQltg8JfQXCUYfBAam4vB2v3cewDYKoyq05GipqnUxwrySK9Xu7OXT+3LudbSAKdArcOyMOJorrNCNTJci6mX65/EdiPYmqeUxz6Dbfwf2jyLk7g7iUCzt/HTqFaF3dI8VF5sh1lycvEWWHMjTnd5uEmBuF06h52RlDK/wBOwOkueCLN+Z4nxOizw9epwHSEVqLtKzunP+1yTCqA4b2KtuizZDp/sZ9XpBWZ6GJu2wO0wiR/8LvoBanJ7h5cZ6BW8FfJeTNaqmrksFBN+K6yGlg+DGQbJffj8QszD/t6E6L77YjLyM8Cu9llOLh8ZgcRe77BH+NE/+aQeZn+4IoIiamxvCwSJsZ1kj80S9fJweryOLs+DiUoorxIBg7CWHxJ70geJjacKBrb2eDIkRuVVYiz5YDzoGBZpEWANic2Ch96FMrk8QJ9gDIqy0NneLi8vkYKComRuWKFLNEiOHxQVMqCxMeN7Pg+yaZJAUQRHnjZdn2vmacawOJul4gzp/G7jg9TlwuKwzsVBwuLyAoWuqjU7FFy3DLRyLM2pEqdNZUjn7agLixOdiiTB4q+oOEHQ1FR4d00RghpVWmFM4R0efz/RjX3P+3xUBNHbSwig+7B1tEIK1ckSt4zteMJReCqyRZ03UrmcuwwuXQ4ueV2GsSnHt/+oyC0KgWqkC4U4sDdWQMKRMYE0FQyltr2FGXy56MLIM54DMLXyCePE+roMkYqyUYgnz8u8xdlZEK0uH18gLkMeTg06bmdHuxh28+Yq44GoDk4VAa/IfBHbRLeyZ7FNNjUnV29U6kZA3M2qDSb4sbw0GGtTVP3BLRULcUPCXAFxZ6SpqTXox9chrerIzXytUxeJqVajvPSMtTVjl8uppGEuztYVF8ZkrIBO352AYoP6hq7PAxK9h7epGyENXd75AulbKJoqDK56aNSZIzquhQJivktSkwzvpDCff6E86lqL9ma1yRsjTIV8xm5xpmHBlOMLQrGA9xX8ZKwAv5LDpJBFRRG3o3PncrwzPt4eXRzilpjfBnHzEHDtL0mR6lKu0HOWesNTXU3+cBrmfsBVXZKKhbiXx1tivAek59A/n8Mz/8XJoOR3+wJzBzL3Yl571SVoy1DwcczRW9tsFyPQsZMYAru1v6nOkddiOKc+BA1CjT5Uu8Lw5irJWAEEN5mqWAuwY1tRPvEYnum/iNx/rN9R12GEe0lqmcr1+eBiS5vs/Hidhv3G16omvixN0vAdeaoIcUvE2GnYyGjs7xy0f7R3/DjAk+YN6Ow+VMLz9SgQGZ4D6t8fQNX3WKX3fQDeQtlwLuGmyfFqG659asDDCieF2AKhvi9ATEDf+WNtz9w93deIsKvb1+24QEX7sDc9mXx8Mr8wkX7eC4PymyhNQ16nyUPWu4slZlns81cK/iziho4B3wYPs67VFyZolZ9h8eM+/L8+R2IBHQoq8xM9804cSa1JOd5KRxxJCHxXlz3KPXkUXpopCx7/GrPz5blfmK/MhP7SFIPOz4EeH+1zxvxCEwWnVdjYmJ450gt4f5hfyhprG/DxrDzpVXkh72GEVgCJ3s3bIPxaG6MxGaUV6La3YEPya2112SHM4qMzCIj7MT8tzjabXS+9iKc6C5D3uD2u5mtz/weG9m21yBhtPAAAAABJRU5ErkJggg=="
-              alt="React.js icon"></div>
-          <p class="">React.js</p>
-        </div>
-        <!-- React.js photo start -->
-    
-        <!-- REST API photo start -->
-        <div class="col-6 col-md-4 col-lg-3 ">
-          <div class="m-2"><img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAtCAYAAAD7nag2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAojSURBVHgB3VoJcJT1FX+7yW422SS7m01CgBhAEgMEgYKEQKDlKAahIm2plSq02GNKndZOLUNBi9QpOBaVwYotVAQZqqMdEbWCHSkDlkCEEEwrR5AQjph7c+1mk90c9Pe+3e/Y+0gi6G9mZ7L7Xf/3f+/93u+9L6obAH2FoaZbFNuvdlD6h/U05VgTPXaunaKFajA9aO+9QbWOPmru7qNO/B2jIjLEqilbH0M6tUo6r7Stm1aWt1KhSUt/vdMg/La4tJn+2eAQ/tbgVMc9QykaxNIAox4G7fncToebnPRfazfVOfvIewtXZSXQtvEuQ442O+nbpS3U2tNHZ209ZO3towbc43Rbj3T+kLgY6sAG6bFD1V291IP7jYyPCWs9A2bgRSxu/UUrvVnXFfS87IQY+jEMFGGHQWyciNdrfK9noyZ81Eg/uS2BNnxmQxSoqGxmKmWGYWS/Q7Sr7wb9+UoHPV5hw876v1USFhSnUsETajo23UwGjWfqP3imlV6v7aRIsCAtjg5MTQl5Xr88yKFUdNJC5dYej98zYMjKzHiaa9ZRvlEjGOgN7AtxGl7p7KUDjQ6PY9NwzfxULSEqae/nnXS9q8/n+lp4NRxE7UEmj9klFvqsQzZujD6WNuUm0X1DdKRSBb9+1nELnQS5sPFMQiK2jUumVSP1Hucyi25BlIhYmqGjVyYYKTE2xEMoyjLBoXh/WYuHccuG6uh4YSotyQhtHHvvdHs3deM+SuO+kxHnYxzjmbHJlJMQq3g+hWUcIyoD11ywUnGLU/r+ZE4S7Z1kImOYD20Cs3LueqMoVef3fL7tvUPipO/MvM9V2sC03RQKERtYhptuqZLDZc3telqfkxjSa0qkI0d3ot6tGB5PWsWFcerAN4mPkY+1wOurK6y0+FQzhULEBm68ZJP+HhkfS7+H9yKwTcJKUP4OGDlUJy/haLMj4Pn7/ZSfIbrQZSIiA8+DLd+ulx+0dVwSJcREY54LHb2eBXtXdSd90OhryAbUVxYBIsQnjg6jDkZUJvbW2KW/70yKRV7oKFpwiSk80USVdk+6X3iqhX6EElNo0ghl4p06Bx1skj07DKrm40Iz0Q0V6mnozQ3bwPPYwXcb5Ac9MDSe+gN2vMXpv0Lthif54w+/HJFAw71Ck+XhXyDO1yNdvNM4aIjyhSy/so80UB6k0llFQe+P9xhmrZp2TzQIJGOEsvk+ykxSGCy87VoHpJ28Mczms05Y6Clww8ZLVp/z/RZ6ZvDnqmz09KUOD50oQott6lyQQdFnn4yDyLlRIKsxibF0Dhs4/j+N0rF4PGcUtCuXlMvuUDaiGzmJEM3Wu4JvKerxPgUBfVRgppkpWum7T4i2w6CFJ5vpeKtnjVFjp3PwsHlmrdDWDIRxjHvS5Ejw9uAGlJ/VoxOppsuVr6gu9MbkFMk4xrY8A52BaKhyb8DvKtrpaEEqidzn4UHu2VhbHmuRjUtDKD2CuP/BsHiPGw8GWNUUfWyhT6295MSyDtxloqJ01wbYsPH6GLXfesv9ZH5xk/T93/kpNCfVJQw8DGQ6fkpR5x6CUc+MSfaoVV8UuFmOpAR9Cw3yATcJPgwWfhlalSGtvAK6clOlbNwDSPo9k4w3xThGpPV1iYL0jlpcOpchrX5zpY1EcuLiy8Z9mTDbJBPLta4equl0kaOQVGxYcbOcd09kJ0LgBt/BT5HYFYpuQgPGS0cRLkAvx73acYUYF8HSbor7+L9QvLkOjgZxTcXiMpDr++v81z7O/YnJGgqGbLBwEhjWilzthj2NEPQjcG/BwHMo4hV2ebF3p8VRKOyp6aRnL0N0ixns3o8taG3G4mHfQ5fujUcwqkjW6GkGekEHqD8F9e8ajM1CxBzKN/u9hvHYKH1IAxnJqP9iqRbbMMFAi1OWS2Y8NFMX3kCHsWyYjv6GhF4Hdf8CmtI3MHrYAEXBMGFHDxekSF1CKry045qdLHj4d9E37p5goEfRzPLM5WpnD73snqitxb3YAz/DhuQbNJSXGB57Kwu62p18wpXdiiP6CJP7rK2Xnq600ntuET7DJO90B7z06Nl2ST6tQU37Juj7CbD1WyjO/CmAAWzIvFQ5argdYwPnmuPo/qHhKSY2oVVhSIL7oYKdPKsU4U+5BMNlhPaWKjtVYbayOD2ONo8xSMf4rizJ0twf9iTPaErR+fPMJge5VYIa9vD/2gTv9wfl4AS7u4lmDZ7l7jQEyzJRCsRBbDsYpyyMTlnEEnTa+6aYhBR8H8MjnoWKMEGZvPY1I9SHSfjMhgr6E9j6VwjL+fBYxTfS6MFhLg9dsoc3RAqEYwpSG5+kkdJMCFFW50wMLHkY7yDcJhtCJ7WIu7HYOQinwxYH/QaL51Bk1CLMWKiLmI9zpiOEmWGr4XEOUXFhX1fQfDTYqpgyzDL50aJLIIlEA3dV22nVCL0w/gsEHgItgGF3GV0325ibSH+46DrWDhJZ6IeJc7GJP83SC43uu9hE1o+T0Ff+cGwCLVXkGpcaDrHhYYqM52Gcsq9ccZvcyklSjZM690ijlIMrMS/ZOfHWL/Z/x9x0eblcXji3d06Q1y1tEZPAWndoMXbhwtXno3+rM9hgkbDuQjutUBiXhVR70l2iRHiIbR4RTIcqL22XiWIacvGFvGSaagycI9yFLPukldoUM06emt3u1X2sxYJKWn0JjLukUQj5e8HCYiP9IZTOJoXw346XNXcgxLk3fBZEteO6HfVTfh6/FjgyzSykQUADGTySm1viO44vQr4dzPf/LoAHRTxLUeIXqG0vjjd4/LYIY76DjYEnZ4yXsJk/R/6/BqX00Ceyd07NMEPmaYWZavqheo9rmDXfmmwUyo43fLLYBCXDhnDLoYTFGbg+vnTF7vPbP8CQHT2B3wqwTFuOPF8EMjIq6vBvz1uDXqcEX7dutJ5KYHxOgF7VL01lQDRzP/UB3t6w8lAHEd48Sjjc7KJ6LuTiGJBJ65AlsLdYtr0KEnsPz3g8Wx7Xc7GudwavieMQhtztX0Ad/WNuctDWKqjIY9HNH56otXb79+D7DV1Cc8qYhzrHY42tV101aTt0531hDKeUEosRE2QgwhvD7wa16vAkZVgqdmwQsfuKYrzHqoaHR6KBJ1DEef6Z7qeeNsBLnOvXIbSVNSwXocZtTnFrwEeGbRyjX+16Gdi23M24HCVF8HYhJlom9wvONuTSq9V2v9ey144gtJXGpWlV9DZk30CiX1OkXdflxXPCv+j2nAlqV5xbMdn8Gi9oNF55zG3ZcjeR8XYwSbCaMWsGdkQStYFOkMGbtfI8knu8zZd9OwKeeJ3hqZdXHeUu43k0x4ONqLdrP94ZNCpKRybyTPnxOLfeQTcLUXtwX71MLnmJGjo90+zxXmAOCKTYHac7Ecob70iim4GoDLS5e0YeGDEWpWt9mG0VuoY6h/yugGsidyfiNSPjgwcPvy0Wz2XERcCcSgzqfzrdCvg/9R4O2UP+2l8AAAAASUVORK5CYII="
-              alt="REST API icon"></div>
-          <p class="">REST_API</p>
-        </div>
-        <!-- REST API photo start -->
-        
-
-        <!-- Flutter photo start -->
-        <div class="col-6 col-md-4 col-lg-3 pt-4">
-          <div class="m-2"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" alt="Flutter"
-              width="80">
-          </div>
-          <p class="">Flutter</p>
-        </div>
-        <!-- Flutter photo end -->
-
-<!-- MySQL photo start -->
-<div class="col-6 col-md-4 col-lg-3 pt-4">
-  <div class="m-2">
-    <img src="https://logo.svgcdn.com/logos/mysql.png" alt="MySQL" width="80">
-  </div>
-  <p class="">MySQL</p>
-</div>
-<!-- MySQL photo end -->
-
-
-
-        
-      </div>
-    </div>
-    
-    <!-- New section i create as the skill -->
+    </section>
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
@@ -568,8 +514,9 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p>Full-Stack Developer focused on building scalable web and mobile applications that solve real-world problems and deliver
-        measurable value.</p>
+        <p>Full-Stack Developer focused on building scalable web and mobile applications that solve real-world problems
+          and deliver
+          measurable value.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -583,7 +530,11 @@
               </div>
 
               <h3>Professional Summary</h3>
-              <p>Motivated Full-Stack Developer and Computer Science student at Haramaya University with hands-on experience in building modern web and mobile applications. Skilled in JavaScript, React, Node.js, Flutter, and relational databases. Strong understanding of data structures, system design fundamentals, and clean code principles. Passionate about developing scalable, secure, and user-focused software solutions.</p>
+              <p>Motivated Full-Stack Developer and Computer Science student at Haramaya University with hands-on
+                experience in building modern web and mobile applications. Skilled in JavaScript, React, Node.js,
+                Flutter, and relational databases. Strong understanding of data structures, system design fundamentals,
+                and clean code principles. Passionate about developing scalable, secure, and user-focused software
+                solutions.</p>
 
               <h3 class="mt-4">Contact Information</h3>
               <ul class="contact-info list-unstyled">
@@ -593,47 +544,15 @@
                 <li><i class="bi bi-linkedin"></i> linkedin.com/in/naol-gonfa-61b7a9363/</li>
               </ul>
 
-              <div class="skills-animation mt-4">
+              <div class="resume-skills-text mt-4">
                 <h3>Technical Skills</h3>
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between">
-                    <span>Web Development</span>
-                    <span>85%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between">
-                    <span>Database Systems</span>
-                    <span>75%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between">
-                    <span>Mobile App Development</span>
-                    <span>70%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between">
-                    <span>Problem Solving & Algorithms</span>
-                    <span>80%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
+                <p class="resume-skills-body"><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Bootstrap,
+                  Tailwind CSS.</p>
+                <p class="resume-skills-body"><strong>Backend:</strong> Node.js, Java, C#, PHP, REST APIs.</p>
+                <p class="resume-skills-body"><strong>Database:</strong> MongoDB, Firebase, MySQL, PostgreSQL, Oracle,
+                  Microsoft SQL Server.</p>
+                <p class="resume-skills-body mb-0"><strong>Middleware &amp; tooling:</strong> CORS, body-parser, JWT,
+                  Multer, JWS, OAuth, bcrypt, webpack, Babel.</p>
               </div>
             </div>
           </div>
@@ -657,41 +576,41 @@
               </div>
 
 
-            <!-- Education Section -->
-            <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
-              <h3><i class="bi bi-mortarboard me-2"></i>Education</h3>
+              <!-- Education Section -->
+              <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="bi bi-mortarboard me-2"></i>Education</h3>
 
-              <div class="resume-item">
-                <h4>Bachelor of Science in Computer Science</h4>
-                <h5>2024 – Present</h5>
-                <p class="company"><i class="bi bi-building"></i> Haramaya University</p>
-                <p>Expected Graduation: 2027</p>
-              </div>
+                <div class="resume-item">
+                  <h4>Bachelor of Science in Computer Science</h4>
+                  <h5>2024 – Present</h5>
+                  <p class="company"><i class="bi bi-building"></i> Haramaya University</p>
+                  <p>Expected Graduation: 2027</p>
+                </div>
 
-            <!-- Certifications Section -->
-            <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
-              <h3><i class="bi bi-award me-2"></i>Relevant Coursework:</h3>
+                <!-- Certifications Section -->
+                <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
+                  <h3><i class="bi bi-award me-2"></i>Relevant Coursework:</h3>
 
-              <div class="resume-item">
-                <h4>Data Structures & Algorithms </h4>
-              </div>
+                  <div class="resume-item">
+                    <h4>Data Structures & Algorithms </h4>
+                  </div>
 
-              <div class="resume-item">
-                <h4>Database Systems</h4>
-              </div>
+                  <div class="resume-item">
+                    <h4>Database Systems</h4>
+                  </div>
 
-              <div class="resume-item">
-                <h4>Object-Oriented Programming</h4>
-              </div>
+                  <div class="resume-item">
+                    <h4>Object-Oriented Programming</h4>
+                  </div>
 
-              <div class="resume-item">
-                <h4>Operating Systems</h4>
+                  <div class="resume-item">
+                    <h4>Operating Systems</h4>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-      </div>
+          </div>
 
     </section><!-- /Resume Section -->
 
@@ -701,8 +620,9 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Portfolio</h2>
-        <p>A collection of real-world projects demonstrating my ability to design, develop, and deploy scalable web applications
-        using modern technologies.</p>
+        <p>A collection of real-world projects demonstrating my ability to design, develop, and deploy scalable web
+          applications
+          using modern technologies.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -724,19 +644,63 @@
 
             <div class="col-lg-9">
               <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/yenebeta2.png" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">YENE BET (Rental PWA)</span>
+                        <h4>A full-stack progressive web app for browsing rental properties, saving favorites, messaging
+                          owners, and managing listings through a dedicated owner dashboard with analytics and map
+                          integration.</h4>
+                        <div class="portfolio-links">
+                          <a href="https://github.com/Naol724/YENE-BETA">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://yenebeta.vercel.app/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Weather-app.jpg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/DebugSense.jpg" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Full-Stack Weather Application</span>
-                        <h4>Real-time weather forecasting app using API integration and responsive UI design.</h4>
+                        <span class="category">Debugsenser AI</span>
+                        <h4>AI-powered system that explains programming errors and provides corrected code using
+                          LLaMA-3.3-70B via Groq API.</h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/WeatherApp" >
+                          <a href="https://github.com/Naol724/Debugsenser-ai">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://weatherapp-5-k3vc.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://debugsenser-ai-3.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/Weather App.png" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Weather Application</span>
+                        <h4>Real-time weather forecasting app using API integration and responsive UI design.</h4>
+                        <div class="portfolio-links">
+                          <a href="https://github.com/Naol724/WeatherApp">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://weatherapp-5-k3vc.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -745,16 +709,18 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Boostrap.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/Boostrap.jpeg" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Responsive Business Website</span>
                         <h4>Modern responsive website built with Bootstrap and deployed to production.</h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/Bootstrap-App-Clone" >
+                          <a href="https://github.com/Naol724/Bootstrap-App-Clone">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://bootstrap-app-clone-1.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://bootstrap-app-clone-1.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -763,16 +729,19 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automotive">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/React-app.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/React-app.jpeg" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">React Multi-Page Application</span>
-                        <h4>Single-page application using React Router for dynamic navigation and component architecture.</h4>
+                        <h4>Single-page application using React Router for dynamic navigation and component
+                          architecture.</h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/React-Apple-Routing" >
+                          <a href="https://github.com/Naol724/React-Apple-Routing">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://react-apple-routing-3.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://react-apple-routing-3.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -781,16 +750,19 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-nature">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Netflix2.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/Netflix2.jpeg" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Movie Streaming Web App</span>
-                        <h4>React-based movie streaming platform with API integration and dynamic content rendering.</h4>
+                        <h4>React-based movie streaming platform with API integration and dynamic content rendering.
+                        </h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/movie-streaming-app" >
+                          <a href="https://github.com/Naol724/movie-streaming-app">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://movie-streaming-app-0p2g.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://movie-streaming-app-0p2g.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -803,12 +775,14 @@
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">E-Commerce Web Application </span>
-                        <h4>Functional e-commerce platform with product listings, cart system, and responsive design.</h4>
+                        <h4>Functional e-commerce platform with product listings, cart system, and responsive design.
+                        </h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/React-Amazon-clone" >
+                          <a href="https://github.com/Naol724/React-Amazon-clone">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://react-ecommerce-app-24et.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://react-ecommerce-app-24et.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -817,16 +791,18 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Evan-forum.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/Evan-forum.jpeg" class="img-fluid" alt="Portfolio Image"
+                      loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Community Discussion Platform</span>
                         <h4>Full-stack Q&A platform with authentication and database integration.</h4>
                         <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/Evan-Forum-frontend" >
+                          <a href="https://github.com/Naol724/Evan-Forum-frontend">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://evan-forum-frontend1.onrender.com/" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="https://evan-forum-frontend1.onrender.com/" title="More Details"><i
+                              class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -851,7 +827,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Interested in working together? Feel free to reach out for freelance projects, collaborations, or internship
-        opportunities.</p>
+          opportunities.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -945,14 +921,16 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span>
+        </p>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

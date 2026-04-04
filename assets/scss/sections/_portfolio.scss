@@ -68,12 +68,17 @@
     }
   }
 
+  .portfolio-container {
+    --bs-gutter-x: 1rem;
+  }
+
   .portfolio-wrap {
     transition: 0.4s;
     position: relative;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(99, 179, 237, 0.45);
     height: 100%;
 
     img {

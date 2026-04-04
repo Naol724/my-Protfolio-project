@@ -10,6 +10,46 @@
   "use strict";
 
   /**
+   * Theme toggle (light / dark)
+   */
+  const THEME_KEY = 'portfolio-theme';
+
+  function initThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    function applyToggleUi(theme) {
+      const icon = btn.querySelector('i');
+      if (theme === 'dark') {
+        btn.setAttribute('aria-label', 'Switch to light theme');
+        btn.setAttribute('title', 'Light mode');
+        if (icon) icon.className = 'bi bi-sun-fill';
+      } else {
+        btn.setAttribute('aria-label', 'Switch to dark theme');
+        btn.setAttribute('title', 'Dark mode');
+        if (icon) icon.className = 'bi bi-moon-stars-fill';
+      }
+    }
+
+    applyToggleUi(currentTheme());
+
+    btn.addEventListener('click', function() {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) { /* ignore */ }
+      applyToggleUi(next);
+    });
+  }
+
+  initThemeToggle();
+
+  /**
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
@@ -109,23 +149,6 @@
    * Initiate Pure Counter
    */
   new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
 
   /**
    * Initiate glightbox

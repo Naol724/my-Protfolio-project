@@ -1414,26 +1414,23 @@ section,
   margin-right: 0.5rem;
 }
 
-.resume .resume-side .skill-item {
-  margin-bottom: 1.5rem;
+.resume .resume-side .resume-skills-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-weight: 600;
 }
 
-.resume .resume-side .skill-item span {
+.resume .resume-side .resume-skills-body {
   font-size: 0.9rem;
+  line-height: 1.65;
   color: var(--default-color);
+  margin-bottom: 0.65rem;
 }
 
-.resume .resume-side .skill-item .progress {
-  height: 8px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-radius: 4px;
-  margin-top: 0.5rem;
-}
-
-.resume .resume-side .skill-item .progress .progress-bar {
-  background-color: var(--accent-color);
-  width: 0;
-  transition: width 1s ease;
+.resume .resume-side .resume-skills-body strong {
+  color: var(--heading-color);
+  font-weight: 600;
 }
 
 .resume .resume-section {
@@ -1586,12 +1583,17 @@ section,
   font-weight: 600;
 }
 
+.portfolio .portfolio-container {
+  --bs-gutter-x: 1rem;
+}
+
 .portfolio .portfolio-wrap {
   transition: 0.4s;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(99, 179, 237, 0.45);
   height: 100%;
 }
 
@@ -2554,4 +2556,308 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# Skills stack (categorized icons + tools marquee)
+--------------------------------------------------------------*/
+.skills-stack .skills-stack-panel {
+  background-color: var(--surface-color);
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem 1.35rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .skills-stack .skills-stack-panel {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.skills-stack .skills-stack-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.skills-stack .skills-stack-title--marquee {
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.skills-stack .skills-marquee-hint {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 28%);
+}
+
+.skills-stack .skills-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.skills-stack .skills-icon-grid--dense {
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+}
+
+.skills-stack .skill-icon-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  padding: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-stack .skill-icon-cell:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+.skills-stack .skill-icon-cell img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+html[data-theme="dark"] .skills-stack .skill-icon-cell--tailwind img {
+  filter: brightness(0) invert(1);
+}
+
+.skills-stack .skill-icon-glyph i {
+  font-size: 1.65rem;
+  color: var(--accent-color);
+}
+
+.skills-stack .skills-tools-marquee-wrap {
+  margin-top: 0.5rem;
+}
+
+.skills-stack .tools-marquee {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background-color: color-mix(in srgb, var(--surface-color), var(--background-color) 40%);
+  padding: 0.85rem 0;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.skills-stack .tools-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: skills-tools-marquee 38s linear infinite;
+}
+
+.skills-stack .tools-marquee:hover .tools-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes skills-tools-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-stack .tools-marquee-set {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 0 1.25rem;
+}
+
+.skills-stack .tools-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  color: var(--heading-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.skills-stack .tools-marquee-item img {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.skills-stack .tools-marquee-label {
+  letter-spacing: 0.02em;
+}
+
+.skills-stack .tools-marquee-item--text {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+html[data-theme="dark"] .skills-stack .tools-marquee-item img[src*="vercel"],
+html[data-theme="dark"] .skills-stack .tools-marquee-item img[src*="cursor"] {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-stack .tools-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skills-stack .tools-marquee-set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .skills-stack .tools-marquee-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Theme toggle (light / dark)
+--------------------------------------------------------------*/
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --background-color: #f1f5f9;
+  --default-color: #334155;
+  --heading-color: #0f172a;
+  --accent-color: #2563eb;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  --nav-color: rgba(15, 23, 42, 0.62);
+  --nav-hover-color: #0f172a;
+  --nav-mobile-background-color: #e2e8f0;
+  --nav-dropdown-background-color: #e2e8f0;
+  --nav-dropdown-color: #1e293b;
+  --nav-dropdown-hover-color: #2563eb;
+}
+
+html[data-theme="light"] .light-background {
+  --background-color: #e2e8f0;
+  --surface-color: #f8fafc;
+}
+
+html[data-theme="light"] .dark-background {
+  --background-color: #0f172a;
+  --default-color: #f8fafc;
+  --heading-color: #ffffff;
+  --surface-color: #1e293b;
+  --contrast-color: #ffffff;
+}
+
+html[data-theme="light"] .header {
+  --background-color: #ffffff;
+  --default-color: #334155;
+  --heading-color: #0f172a;
+  --contrast-color: #1e293b;
+}
+
+html[data-theme="light"] .header.dark-background {
+  --background-color: #ffffff;
+  --default-color: #334155;
+  --heading-color: #0f172a;
+  --surface-color: #f1f5f9;
+  --contrast-color: #1e293b;
+}
+
+html[data-theme="light"] .header .header-container {
+  border-color: color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+html[data-theme="light"] .header .social-links a {
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  color: var(--heading-color);
+}
+
+html[data-theme="light"] .header .social-links a:hover {
+  color: var(--contrast-color);
+}
+
+html[data-theme="light"] .header .header-toggle {
+  color: var(--contrast-color);
+}
+
+html[data-theme="light"] .bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .contact .info-box {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+html[data-theme="light"] .contact .contact-form .form-control,
+html[data-theme="light"] .contact .contact-form .form-select {
+  background-color: #f8fafc;
+  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 55%);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 12%);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.theme-toggle i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media (max-width: 1199px) {
+  .theme-toggle {
+    right: 62px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .theme-toggle {
+    right: 24px;
+    top: 20px;
+  }
 }
