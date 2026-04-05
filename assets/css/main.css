@@ -63,6 +63,11 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%,  rgba(37,  99, 235, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 90%,  rgba(124, 58, 237, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 60% 40%,  rgba(6,  182, 212, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
   font-family: var(--default-font);
 }
 
@@ -2862,4 +2867,145 @@ html[data-theme="light"] .contact .contact-form .form-select {
     right: 24px;
     top: 20px;
   }
+}
+
+
+/*--------------------------------------------------------------
+# Background — ambient orbs & animated gradient
+--------------------------------------------------------------*/
+
+/* Fixed full-page canvas behind everything */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  /* Dark base gradient */
+  background:
+    radial-gradient(ellipse 90% 70% at 15%  5%,  rgba(37,  99, 235, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 85% 95%,  rgba(124, 58, 237, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 55% 45%,  rgba(6,  182, 212, 0.10) 0%, transparent 50%),
+    linear-gradient(160deg, #0a0f1e 0%, #0f172a 40%, #130d2a 70%, #0a0f1e 100%);
+
+  animation: bg-shift 18s ease-in-out infinite alternate;
+}
+
+/* Subtle dot-grid texture layer */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Slow ambient drift */
+@keyframes bg-shift {
+  0%   { background-position: 0% 0%,   100% 100%, 50% 50%, center; }
+  50%  { background-position: 5% 8%,   95%  92%,  55% 45%, center; }
+  100% { background-position: 2% 4%,   98%  96%,  52% 48%, center; }
+}
+
+/* Floating orb 1 — top-left blue */
+.bg-orb-1 {
+  position: fixed;
+  top: -120px;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+  animation: orb-float-1 20s ease-in-out infinite alternate;
+}
+
+/* Floating orb 2 — bottom-right purple */
+.bg-orb-2 {
+  position: fixed;
+  bottom: -140px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.20) 0%, transparent 70%);
+  filter: blur(70px);
+  z-index: -1;
+  pointer-events: none;
+  animation: orb-float-2 24s ease-in-out infinite alternate;
+}
+
+/* Floating orb 3 — center cyan accent */
+.bg-orb-3 {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+  animation: orb-float-3 28s ease-in-out infinite alternate;
+}
+
+@keyframes orb-float-1 {
+  0%   { transform: translate(0,   0);   opacity: 0.8; }
+  100% { transform: translate(40px, 60px); opacity: 1;   }
+}
+@keyframes orb-float-2 {
+  0%   { transform: translate(0,   0);    opacity: 0.7; }
+  100% { transform: translate(-50px, -40px); opacity: 1; }
+}
+@keyframes orb-float-3 {
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; }
+}
+
+/* Reduce motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .bg-orb-1, .bg-orb-2, .bg-orb-3 {
+    animation: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Background — Light mode override
+--------------------------------------------------------------*/
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 90% 70% at 15%  5%,  rgba(37,  99, 235, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 85% 95%,  rgba(124, 58, 237, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 55% 45%,  rgba(6,  182, 212, 0.05) 0%, transparent 50%),
+    linear-gradient(160deg, #e8f0fe 0%, #f1f5f9 40%, #ede9fe 70%, #e8f0fe 100%);
+}
+
+[data-theme="light"] body::after {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+
+[data-theme="light"] .bg-orb-1 {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+}
+[data-theme="light"] .bg-orb-2 {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.10) 0%, transparent 70%);
+}
+[data-theme="light"] .bg-orb-3 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+}
+
+/* Keep sections transparent so the background shows through */
+[data-theme="dark"] .section,
+[data-theme="light"] .section {
+  background-color: transparent !important;
 }
