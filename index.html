@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme: apply before any rendering to avoid flash -->
   <script>
     (function () {
       try {
@@ -15,78 +17,58 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
-      } catch (e) { /* ignore */ }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
     })();
   </script>
 
-  <!-- Main Title -->
   <title>Naol Gonfa | Full Stack Web Developer & AI Engineering Enthusiast</title>
-  <!-- <meta name="google-site-verification" content="wv-mIqtQCRoSOMmx0NyAtUtsIte4g1Hdd0RRoBXNbn4" /> -->
+
   <!-- Basic Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="keywords"
-    content="Naol Gonfa, Naol Online, Naol.com, Nilegt, naolgonfa.com, Full Stack Developer, Web Developer, Mobile Apps, React, Tailwind CSS, Flutter, C++, C#, Java, Ethiopia,Harar,Programmer, Haramaya University, AI Engineering">
-  <meta name="description"
-    content="Driven Computer Science student at Haramaya University and aspiring developer. Skilled in web and mobile technologies including C++, C#, Java, HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap, Flutter, and Dart. Passionate about creating scalable, high-performance applications and solving real-world problems.">
-  <meta name="subject" content="Portfolio of Naol Gonfa — Web & Mobile Development, AI Engineering Enthusiast">
+  <meta name="keywords" content="Naol Gonfa, Naol Online, Nilegt, Full Stack Developer, Web Developer, React, Node.js, Flutter, Ethiopia, Haramaya University, AI Engineering">
+  <meta name="description" content="Driven Computer Science student at Haramaya University. Skilled in React, Node.js, JavaScript, Tailwind CSS, Bootstrap, Flutter. Passionate about scalable, high-performance applications.">
   <meta name="author" content="Naol Gonfa">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://naol.online/">
 
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Naol Gonfa | Full Stack Web Developer & AI Engineering Enthusiast">
+  <meta property="og:description" content="Explore the portfolio of Naol Gonfa — Full Stack Web Developer & AI Engineering Enthusiast.">
   <meta property="og:image" content="https://naol.online/assets/img/profile/naol-3.png">
-  <!-- Replace with your real profile image path -->
   <meta property="og:image:alt" content="Naol Gonfa Portfolio Preview">
   <meta property="og:site_name" content="Naol Gonfa Portfolio">
   <meta property="og:url" content="https://naol.online/">
-  <meta property="og:description"
-    content="Explore the portfolio of Naol Gonfa — Full Stack Web Developer & AI Engineering Enthusiast. Projects in web development, mobile apps, and AI solutions.">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Naol Gonfa | Full Stack Developer & AI Enthusiast">
-  <meta name="twitter:description"
-    content="Computer Science student at Haramaya University — building modern websites, mobile apps, and AI projects.">
+  <meta name="twitter:description" content="Computer Science student at Haramaya University — building modern websites, mobile apps, and AI projects.">
   <meta name="twitter:image" content="https://naol.online/assets/img/profile/naol-3.png">
-  <!-- Replace with actual image -->
   <meta name="twitter:image:alt" content="Naol Gonfa Portfolio">
   <meta name="twitter:site" content="@nilegt_">
 
   <!-- Favicon -->
-  <link rel="icon" href="https://naol.online/assets/img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="https://naol.online/assets/img/apple-touch-icon.png">
+  <link rel="icon" href="/assets/img/Nilegt_fav.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-icon-57x57(1).png">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-<!-- Favicons -->
-<link href="assets/img/Nilegt_fav.png" rel="icon">
-<link href="assets/img/apple-icon-57x57(1).png" rel="apple-touch-icon">
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css?v=3" rel="stylesheet">
 
-<!-- Vendor CSS Files -->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-<!-- Main CSS File -->
-<link href="assets/css/main.css" rel="stylesheet">
-
-<!-- =======================================================
-  * Template Name: SnapFolio
-  * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
-  * Updated: Jul 21 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -203,7 +185,7 @@
               <div class="hero-visual">
                 <div class="profile-container">
                   <div class="profile-background"></div>
-                  <img src="assets/img/profile/naol-3.png" alt="Naol Gonfa" class="profile-image">
+                  <img src="/assets/img/profile/naol-3.png" alt="Naol Gonfa" class="profile-image">
                 </div>
               </div>
             </div>
@@ -224,7 +206,7 @@
             <div class="profile-card">
               <div class="profile-header">
                 <div class="profile-image">
-                  <img src="assets/img/profile/naol-2.png" alt="Profile Image" class="img-fluid">
+                  <img src="/assets/img/profile/naol-2.png" alt="Profile Image" class="img-fluid">
                 </div>
                 <div class="profile-badge">
                   <i class="bi bi-check-circle-fill"></i>
@@ -374,7 +356,7 @@
 
         <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="80">
           <h3 class="skills-stack-title">Frontend</h3>
-          <div class="skills-icon-grid" role="list">
+          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
             <div class="skill-icon-cell" role="listitem" title="HTML5">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="">
             </div>
@@ -398,7 +380,7 @@
 
         <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="120">
           <h3 class="skills-stack-title">Backend</h3>
-          <div class="skills-icon-grid" role="list">
+          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
             <div class="skill-icon-cell" role="listitem" title="Node.js">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="">
             </div>
@@ -419,7 +401,7 @@
 
         <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="160">
           <h3 class="skills-stack-title">Database</h3>
-          <div class="skills-icon-grid" role="list">
+          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
             <div class="skill-icon-cell" role="listitem" title="MongoDB">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="">
             </div>
@@ -443,7 +425,7 @@
 
         <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="200">
           <h3 class="skills-stack-title">Middleware &amp; tooling</h3>
-          <div class="skills-icon-grid skills-icon-grid--dense" role="list">
+          <div class="skills-icon-grid skills-icon-grid--dense d-flex flex-wrap gap-3" role="list">
             <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="CORS">
               <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
             </div>
@@ -645,7 +627,7 @@
               <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/yenebeta2.png" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/yenebeta2.png" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -667,7 +649,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/DebugSense.jpg" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/debugsense.jpg" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -688,7 +670,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Weather App.png" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/weather-app.png" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -708,7 +690,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Boostrap.jpeg" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/bootstrap.jpeg" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -728,7 +710,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automotive">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/React-app.jpeg" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/react-app.jpeg" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -749,7 +731,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-nature">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Netflix2.jpeg" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/netflix2.jpeg" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -770,7 +752,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Amazon.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="/assets/img/portfolio/amazon.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">E-Commerce Web Application </span>
@@ -790,7 +772,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/Evan-forum.jpeg" class="img-fluid" alt="Portfolio Image"
+                    <img src="/assets/img/portfolio/evan-forum.jpeg" class="img-fluid" alt="Portfolio Image"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
@@ -935,19 +917,19 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js?v=3"></script>
 
 </body>
 

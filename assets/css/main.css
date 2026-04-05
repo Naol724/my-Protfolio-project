@@ -2606,6 +2606,8 @@ html[data-theme="dark"] .skills-stack .skills-stack-panel {
 
 .skills-stack .skill-icon-cell {
   aspect-ratio: 1;
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2828,19 +2830,19 @@ html[data-theme="light"] .contact .contact-form .form-select {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 55%);
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 12%);
+  background-color: #1d4ed8;
   transform: scale(1.05);
 }
 
 .theme-toggle:focus-visible {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid #2563eb;
   outline-offset: 3px;
 }
 
