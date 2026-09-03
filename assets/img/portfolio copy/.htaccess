@@ -1,0 +1,4 @@
+# Unused legacy images — kept in project, not served publicly
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>

@@ -1,42 +1,52 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+/**
+ * Portfolio contact form — Hostinger-ready
+ * Requires: assets/vendor/php-email-form/php-email-form.php
+ */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+$mail_config = [
+  'receiving_email' => 'naolgonfa39@gmail.com',
+  'use_smtp' => false,
+  'smtp' => [
+    'host' => 'smtp.hostinger.com',
+    'username' => '',
+    'password' => '',
+    'port' => 465,
+    'encryption' => 'ssl',
+  ],
+];
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+$local_config_path = __DIR__ . '/mail.config.local.php';
+if (file_exists($local_config_path)) {
+  $local_config = include $local_config_path;
+  if (is_array($local_config)) {
+    $mail_config = array_replace_recursive($mail_config, $local_config);
   }
+}
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+$php_email_form = dirname(__DIR__) . '/assets/vendor/php-email-form/php-email-form.php';
+if (!file_exists($php_email_form)) {
+  http_response_code(500);
+  die('Unable to load the PHP Email Form library.');
+}
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+require $php_email_form;
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  isset($_POST['phone']) && $contact->add_message($_POST['phone'], 'Phone');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+$contact = new PHP_Email_Form;
+$contact->ajax = true;
+$contact->to = $mail_config['receiving_email'];
+$contact->from_name = $_POST['name'] ?? '';
+$contact->from_email = $_POST['email'] ?? '';
+$contact->subject = $_POST['subject'] ?? '';
+$contact->honeypot = $_POST['hp_field'] ?? '';
 
-  echo $contact->send();
-?>
+if (!empty($mail_config['use_smtp']) && !empty($mail_config['smtp'])) {
+  $contact->smtp = $mail_config['smtp'];
+}
+
+$contact->add_message($_POST['name'] ?? '', 'From');
+$contact->add_message($_POST['email'] ?? '', 'Email');
+$contact->add_message($_POST['subject'] ?? '', 'Subject');
+$contact->add_message($_POST['message'] ?? '', 'Message', 10);
+
+echo $contact->send();

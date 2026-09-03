@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Theme: apply before any rendering to avoid flash -->
   <script>
     (function () {
       try {
@@ -17,124 +15,162 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
+      } catch (e) { /* ignore */ }
     })();
   </script>
 
-  <title>Naol Gonfa | Full Stack Web Developer & AI Engineering Enthusiast</title>
-
+  <!-- Main Title -->
+  <title>Naol Gonfa | Full-Stack Developer & QA Engineer</title>
+  <meta name="google-site-verification" content="wv-mIqtQCRoSOMmx0NyAtUtsIte4g1Hdd0RRoBXNbn4" />
   <!-- Basic Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="keywords" content="Naol Gonfa, Naol Online, Nilegt, Full Stack Developer, Web Developer, React, Node.js, Flutter, Ethiopia, Haramaya University, AI Engineering">
-  <meta name="description" content="Driven Computer Science student at Haramaya University. Skilled in React, Node.js, JavaScript, Tailwind CSS, Bootstrap, Flutter. Passionate about scalable, high-performance applications.">
+  <meta name="keywords"
+    content="Naol Gonfa, Naol Online, Naol.com, Nilegt, naolgonfa.com, Full Stack Developer, QA Engineer, Cypress, Automation Testing, Web Developer, Mobile Apps, React, Tailwind CSS, Flutter, C++, C#, Java, Ethiopia,Harar,Programmer, Haramaya University, AI Engineering">
+  <meta name="description"
+    content="Naol Gonfa (Nilegt) — Full-Stack Developer & QA Engineer building scalable web apps and mastering quality assurance with Cypress, Postman, K6, Jira, and Grafana. Computer Science at Haramaya University.">
+  <meta name="subject" content="Portfolio of Naol Gonfa — Full-Stack Developer & QA Engineer">
   <meta name="author" content="Naol Gonfa">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080c14">
   <link rel="canonical" href="https://naol.online/">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Naol Gonfa | Full Stack Web Developer & AI Engineering Enthusiast">
-  <meta property="og:description" content="Explore the portfolio of Naol Gonfa — Full Stack Web Developer & AI Engineering Enthusiast.">
-  <meta property="og:image" content="https://naol.online/assets/img/profile/naol-3.png">
-  <meta property="og:image:alt" content="Naol Gonfa Portfolio Preview">
-  <meta property="og:site_name" content="Naol Gonfa Portfolio">
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Naol Gonfa | Full-Stack Developer & QA Engineer">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-3.png">
+  <meta property="og:image:alt" content="Naol Gonfa — Full-Stack Developer & QA Engineer">
+  <meta property="og:site_name" content="Naol Gonfa | Nilegt">
   <meta property="og:url" content="https://naol.online/">
+  <meta property="og:description"
+    content="Full-Stack Developer & QA Engineer — building scalable products and mastering software quality with modern testing and monitoring tools.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Naol Gonfa | Full Stack Developer & AI Enthusiast">
-  <meta name="twitter:description" content="Computer Science student at Haramaya University — building modern websites, mobile apps, and AI projects.">
-  <meta name="twitter:image" content="https://naol.online/assets/img/profile/naol-3.png">
+  <meta name="twitter:title" content="Naol Gonfa | Full-Stack Developer & QA Engineer">
+  <meta name="twitter:description"
+    content="Full-Stack Developer & QA Engineer learning and mastering React, Node.js, Cypress automation testing, API testing, and quality assurance.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-3.png">
   <meta name="twitter:image:alt" content="Naol Gonfa Portfolio">
   <meta name="twitter:site" content="@nilegt_">
+  <meta name="twitter:creator" content="@nilegt_">
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/img/Nilegt_fav.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/img/apple-icon-57x57(1).png">
+  <link href="assets/img/Nilegt_fav.png" rel="icon" type="image/png">
+  <link href="assets/img/apple-icon-57x57(1).png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Performance: warm connections for external assets -->
+  <link href="https://raw.githubusercontent.com" rel="preconnect" crossorigin>
+  <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="/assets/css/main.css?v=5" rel="stylesheet">
+  <link href="assets/css/main.css?v=202607189" rel="stylesheet">
 
-  <!-- EmailJS CDN -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naol Gonfa",
+    "alternateName": ["Nilegt", "Naol Gonfa"],
+    "url": "https://naol.online/",
+    "image": "https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-3.png",
+    "jobTitle": "Full-Stack Developer & QA Engineer",
+    "description": "Full-Stack Developer and QA Engineer continuously learning and mastering scalable web development and software quality assurance.",
+    "email": "mailto:naolgonfa39@gmail.com",
+    "telephone": "+251913678845",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Harar",
+      "addressCountry": "ET"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Haramaya University"
+    },
+    "sameAs": [
+      "https://github.com/Naol724/Naol724",
+      "https://www.linkedin.com/in/naol-gonfa-61b7a9363/",
+      "https://stackoverflow.com/users/31433702/naol-gonfa",
+      "https://www.instagram.com/nilegt_/",
+      "https://t.me/nilegt"
+    ],
+    "knowsAbout": ["React", "Node.js", "JavaScript", "TypeScript", "Full-Stack Development", "QA Engineering", "Cypress", "Automation Testing", "Postman", "K6", "Jira", "TestLink", "Grafana", "AI Engineering", "Flutter", "MongoDB", "MySQL"]
+  }
+  </script>
 
+  <!-- Hero image loads first -->
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-3.png"
+    fetchpriority="high">
+
+  <!-- Fonts (non-blocking) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+  </noscript>
 </head>
 
 <body class="index-page">
 
-  <!-- Background ambient orbs -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
   <div class="bg-orb-1" aria-hidden="true"></div>
   <div class="bg-orb-2" aria-hidden="true"></div>
   <div class="bg-orb-3" aria-hidden="true"></div>
 
-  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle light / dark mode">
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme"
+    title="Toggle light / dark mode">
     <i class="bi bi-sun-fill" aria-hidden="true"></i>
   </button>
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <i class="header-toggle d-xl-none bi bi-list" role="button" aria-label="Toggle navigation" tabindex="0"></i>
 
     <div class="header-container d-flex flex-column align-items-start">
-      <nav id="navmenu" class="navmenu">
+      <a href="#hero" class="header-brand" aria-label="Naol Gonfa — Home">
+        <span class="header-brand-mark">N</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
         <ul>
-          <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-          <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-          <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
-          <li><a href="#resume"><i class="bi bi-images navicon"></i> Resume</a></li>
-          <li><a href="#portfolio"><i class="bi bi-hdd-stack navicon"></i> Portfolio</a></li>
-          <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+          <li><a href="#hero" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i>Home</a></li>
+          <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i>About</a></li>
+          <li><a href="#skills"><i class="bi bi-code-slash navicon" aria-hidden="true"></i>Skills</a></li>
+          <li><a href="#resume"><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i>Resume</a></li>
+          <li><a href="#portfolio"><i class="bi bi-grid navicon" aria-hidden="true"></i>Work</a></li>
+          <li><a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i>Contact</a></li>
         </ul>
       </nav>
 
       <div class="social-links text-center">
-        <a href="https://t.me/nilegt" target="_blank" rel="noopener noreferrer" class="telegram">
-          <i class="bi bi-telegram"></i>
+        <a href="https://t.me/nilegt" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram">
+          <i class="bi bi-telegram" aria-hidden="true"></i>
         </a>
-
-        <a href="https://m.facebook.com/naol.gonfa.2025/" target="_blank" rel="noopener noreferrer" class="facebook">
-          <i class="bi bi-facebook"></i>
+        <a href="https://m.facebook.com/naol.gonfa.2025/" target="_blank" rel="noopener noreferrer" class="facebook"
+          aria-label="Facebook">
+          <i class="bi bi-facebook" aria-hidden="true"></i>
         </a>
-        <a href="https://www.instagram.com/nilegt_/" target="_blank" rel="noopener noreferrer" class="instagram">
-          <i class="bi bi-instagram"></i>
+        <a href="https://www.instagram.com/nilegt_/" target="_blank" rel="noopener noreferrer" class="instagram"
+          aria-label="Instagram">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
         </a>
-        <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank" rel="noopener noreferrer"><i
-            class="bi bi-stack-overflow"></i></a>
+        <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank" rel="noopener noreferrer"
+          aria-label="Stack Overflow">
+          <i class="bi bi-stack-overflow" aria-hidden="true"></i>
+        </a>
         <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank" rel="noopener noreferrer"
-          class="linkedin">
-          <i class="bi bi-linkedin"></i>
+          class="linkedin" aria-label="LinkedIn">
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
         </a>
       </div>
 
@@ -159,32 +195,49 @@
 
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
               <div class="hero-text">
-                <h1><span class="accent-text">Naol</span> Gonfa</span></h1>
-                <p class="lead">I'm a <span class="typed"
-                    data-typed-items="Full-Stack Developer, React and Node.js Developer, Cloud and Scalable Web App Builder"></span>
+                <h1>Hi, I'm <span class="accent-text">Naol</span> Gonfa</h1>
+                <p class="lead">I build &amp; test <span class="typed"
+                    data-typed-items="scalable full-stack products,automated test suites with Cypress,quality-assured web applications"></span>
                 </p>
                 <p class="description">
-                  Computer Science student at Haramaya University with strong expertise in building modern, scalable,
-                  and user-focused web
-                  applications.
-                  Experienced in React, Node.js and Tailwind CSS.
-                  I focus on writing clean, maintainable code and delivering solutions that solve real-world business
-                  problems.
+                  <span class="hero-student-line">I'm a 3rd-year Computer Science student at Haramaya University.</span>
+                  <span class="hero-role-line"><strong class="hero-role">Full-Stack Developer</strong> and
+                    <strong class="hero-role">QA Engineer</strong> — continuously learning and mastering both
+                    disciplines.
+                    I design, ship, and validate production-ready applications with clean code, strong UX,
+                    and reliable quality assurance practices.</span>
                 </p>
+
+                <div class="hero-stats" aria-label="Key highlights">
+                  <div class="hero-stat">
+                    <span class="hero-stat-value">14+</span>
+                    <span class="hero-stat-label">Projects shipped</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-value">Full-Stack</span>
+                    <span class="hero-stat-label">React · Node · Cloud</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-value">QA Engineer</span>
+                    <span class="hero-stat-label">Cypress · Postman · K6</span>
+                  </div>
+                </div>
 
                 <div class="hero-actions">
                   <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                  <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                  <a href="#contact" class="btn btn-outline">Let's Connect</a>
                 </div>
 
                 <div class="social-links">
-                  <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank"><i
-                      class="bi bi-stack-overflow"></i></a>
-                  <a href="https://t.me/nilegt" target="_blank" class="telegram">
+                  <a href="https://stackoverflow.com/users/31433702/naol-gonfa" target="_blank"
+                    rel="noopener noreferrer" aria-label="Stack Overflow"><i class="bi bi-stack-overflow"></i></a>
+                  <a href="https://t.me/nilegt" target="_blank" rel="noopener noreferrer" class="telegram"
+                    aria-label="Telegram">
                     <i class="bi bi-telegram"></i></a>
-                  <a href="https://github.com/Naol724/Naol724" target="_blank"><i class="bi bi-github"></i></a>
-                  <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank"><i
-                      class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/Naol724/Naol724" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -193,7 +246,9 @@
               <div class="hero-visual">
                 <div class="profile-container">
                   <div class="profile-background"></div>
-                  <img src="/assets/img/profile/naol-3.png" alt="Naol Gonfa" class="profile-image">
+                  <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-3.png"
+                    alt="Naol Gonfa — Full-Stack Developer & QA Engineer" class="profile-image" width="400" height="400"
+                    fetchpriority="high">
                 </div>
               </div>
             </div>
@@ -209,12 +264,18 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row">
+        <div class="about-section-header text-center" data-aos="fade-up">
+          <span class="badge-text">About Me</span>
+          <h2>Building &amp; Testing Products That Scale</h2>
+        </div>
+
+        <div class="row gy-4">
           <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
             <div class="profile-card">
               <div class="profile-header">
                 <div class="profile-image">
-                  <img src="/assets/img/profile/naol-2.png" alt="Profile Image" class="img-fluid">
+                  <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/naol-2.png"
+                    alt="Naol Gonfa profile photo" class="img-fluid" width="160" height="160" loading="lazy">
                 </div>
                 <div class="profile-badge">
                   <i class="bi bi-check-circle-fill"></i>
@@ -223,19 +284,19 @@
 
               <div class="profile-content">
                 <h3>Naol Gonfa</h3>
-                <p class="profession">Full Stack Web Developer &amp; AI Engineering Enthusiast</p>
+                <p class="profession">Full-Stack Developer &amp; QA Engineer</p>
 
                 <div class="contact-links">
-                  <a href="mailto:naol@naol.online" class="contact-item">
-                    <i class="bi bi-envelope"></i>
-                    naol@naol.online
+                  <a href="mailto:naolgonfa39@gmail.com" class="contact-item">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    naolgonfa39@gmail.com
                   </a>
-                  <a href="tel:+15551234567" class="contact-item">
-                    <i class="bi bi-telephone"></i>
+                  <a href="tel:+251913678845" class="contact-item">
+                    <i class="bi bi-telephone" aria-hidden="true"></i>
                     +251-913-678-845
                   </a>
-                  <a href="#" class="contact-item">
-                    <i class="bi bi-geo-alt"></i>
+                  <a href="#contact" class="contact-item">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
                     Harar, Ethiopia
                   </a>
                 </div>
@@ -245,29 +306,25 @@
 
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
             <div class="about-content">
-              <div class="section-header">
-                <span class="badge-text">Get to Know Me</span>
-                <h2>Building Scalable & Impactful Digital Solutions</h2>
-              </div>
-
               <div class="description">
-                <p>I am a dedicated Full-Stack Developer focused on building scalable, secure, and user-centered web
-                  applications. My goal is to transform ideas into high-performance digital products that deliver
-                  measurable value for businesses and
-                  communities.
-                </p>
+                <p>I'm a Full-Stack Developer and QA Engineer who learns and masters both building software and
+                  ensuring its quality. From React and Node.js development to automation testing with Cypress, API
+                  testing with Postman, load testing with K6, and tracking issues in Jira — I deliver reliable,
+                  production-ready products.</p>
 
+                <p>Currently studying Computer Science at Haramaya University while shipping real-world projects
+                  end-to-end. I'm always improving my craft in development, testing, and quality assurance.</p>
               </div>
 
               <div class="details-grid">
                 <div class="detail-row">
                   <div class="detail-item">
                     <span class="detail-label">Specialization</span>
-                    <span class="detail-value">Full-Stack Web Development (React, Node.js)</span>
+                    <span class="detail-value">Full-Stack Development &amp; QA Engineering</span>
                   </div>
                   <div class="detail-item">
-                    <span class="detail-label">Experience Level</span>
-                    <span class="detail-value">Growing Software Developer</span>
+                    <span class="detail-label">Focus</span>
+                    <span class="detail-value">Build · Test · Ship · Master</span>
                   </div>
                 </div>
                 <div class="detail-row">
@@ -283,12 +340,13 @@
               </div>
 
               <div class="cta-section">
-                <a href="/assets/Naol CV.pdf" download class="btn btn-primary">
-                  <i class="bi bi-download"></i>
-                  Download Resume
+                <a href="assets/Naol%20CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+                  aria-label="Open Naol Gonfa resume PDF in a new tab">
+                  <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                  View Resume
                 </a>
                 <a href="#contact" class="btn btn-outline">
-                  <i class="bi bi-chat-dots"></i>
+                  <i class="bi bi-chat-dots" aria-hidden="true"></i>
                   Let's Talk
                 </a>
               </div>
@@ -322,7 +380,7 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-journal-richtext"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1"
                   class="purecounter"></span>
                 <p>Projects</p>
               </div><!-- End Stats Item -->
@@ -352,163 +410,236 @@
 
     </section><!-- /Stats Section -->
 
+    <!-- Skills Section -->
     <section id="skills" class="skills-stack section">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Technologies and tools I work with across the stack.</p>
-        </div>
 
-        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="80">
-          <h3 class="skills-stack-title">Frontend</h3>
-          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
-            <div class="skill-icon-cell" role="listitem" title="HTML5">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="">
+      <div class="container section-title" data-aos="fade-up">
+        <p class="section-eyebrow">Technical Expertise</p>
+        <h2>Skills &amp; Technologies</h2>
+        <p>Full-stack development and QA engineering — learning, practicing, and mastering automation, API, and load
+          testing tools.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="skills-stack-panel glass-card">
+              <h3 class="skills-stack-title">Frontend</h3>
+              <div class="skills-icon-grid">
+                <div class="skill-icon-cell" title="HTML5"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="CSS3"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="JavaScript"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    alt="JavaScript" width="30" height="30"></div>
+                <div class="skill-icon-cell" title="React"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Next.js"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Bootstrap"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                    alt="Bootstrap" width="30" height="30"></div>
+                <div class="skill-icon-cell skill-icon-cell--tailwind" title="Tailwind CSS"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                    alt="Tailwind CSS" width="30" height="30"></div>
+              </div>
             </div>
-            <div class="skill-icon-cell" role="listitem" title="CSS3">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="skills-stack-panel glass-card">
+              <h3 class="skills-stack-title">Backend &amp; APIs</h3>
+              <div class="skills-icon-grid">
+                <div class="skill-icon-cell" title="Node.js"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Express.js"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                    alt="Express.js" width="30" height="30"></div>
+                <div class="skill-icon-cell skill-icon-glyph" title="REST API"><i class="bi bi-braces"
+                    aria-hidden="true"></i></div>
+                <div class="skill-icon-cell" title="PHP"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="30"
+                    height="30"></div>
+                <div class="skill-icon-cell" title="Java"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Git"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="30"
+                    height="30"></div>
+              </div>
             </div>
-            <div class="skill-icon-cell" role="listitem" title="JavaScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="skills-stack-panel glass-card">
+              <h3 class="skills-stack-title">Mobile &amp; Database</h3>
+              <div class="skills-icon-grid">
+                <div class="skill-icon-cell" title="Flutter"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Dart"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="MySQL"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="MongoDB"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="PostgreSQL"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                    alt="PostgreSQL" width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Firebase"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"
+                    width="30" height="30"></div>
+              </div>
             </div>
-            <div class="skill-icon-cell" role="listitem" title="React">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" height="40" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="skills-stack-panel glass-card">
+              <h3 class="skills-stack-title">Languages &amp; Foundations</h3>
+              <div class="skills-icon-grid skills-icon-grid--dense">
+                <div class="skill-icon-cell" title="C++"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="C#"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Java"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Python"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell skill-icon-glyph" title="Data Structures"><i class="bi bi-diagram-3"
+                    aria-hidden="true"></i></div>
+                <div class="skill-icon-cell skill-icon-glyph" title="System Design"><i class="bi bi-cpu"
+                    aria-hidden="true"></i></div>
+                <div class="skill-icon-cell skill-icon-glyph" title="AI / LLM"><i class="bi bi-stars"
+                    aria-hidden="true"></i></div>
+                <div class="skill-icon-cell skill-icon-glyph" title="Responsive UI"><i class="bi bi-phone"
+                    aria-hidden="true"></i></div>
+              </div>
             </div>
-            <div class="skill-icon-cell" role="listitem" title="Bootstrap">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell skill-icon-cell--tailwind" role="listitem" title="Tailwind CSS">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40" alt="">
+          </div>
+          <div class="col-12">
+            <div class="skills-stack-panel glass-card">
+              <h3 class="skills-stack-title">QA &amp; Testing</h3>
+              <div class="skills-icon-grid">
+                <div class="skill-icon-cell skill-icon-glyph" title="QA Engineer"><i class="bi bi-bug"
+                    aria-hidden="true"></i></div>
+                <div class="skill-icon-cell" title="Postman"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell" title="Cypress"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg"
+                    alt="Cypress" width="30" height="30"></div>
+                <div class="skill-icon-cell skill-icon-cell--text" title="K6"><span>K6</span></div>
+                <div class="skill-icon-cell" title="Jira"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira"
+                    width="30" height="30"></div>
+                <div class="skill-icon-cell skill-icon-cell--text" title="TestLink"><span>TestLink</span></div>
+                <div class="skill-icon-cell" title="Grafana"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana"
+                    width="30" height="30"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="120">
-          <h3 class="skills-stack-title">Backend</h3>
-          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
-            <div class="skill-icon-cell" role="listitem" title="Node.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="Java">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="C#">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="REST API">
-              <img src="https://cdn.simpleicons.org/swagger/85EA2D" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="PHP">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="40" height="40" alt="">
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="160">
-          <h3 class="skills-stack-title">Database</h3>
-          <div class="skills-icon-grid d-flex flex-wrap gap-3" role="list">
-            <div class="skill-icon-cell" role="listitem" title="MongoDB">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="Firebase">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="MySQL">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="PostgreSQL">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="Oracle">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="Microsoft SQL Server">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="40" height="40" alt="">
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-stack-panel" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="skills-stack-title">Middleware &amp; tooling</h3>
-          <div class="skills-icon-grid skills-icon-grid--dense d-flex flex-wrap gap-3" role="list">
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="CORS">
-              <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="body-parser">
-              <i class="bi bi-braces" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="JSON Web Token">
-              <i class="bi bi-key-fill" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="Multer">
-              <i class="bi bi-cloud-upload-fill" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="JWS">
-              <i class="bi bi-shield-lock-fill" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="OAuth">
-              <i class="bi bi-lock-fill" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell skill-icon-glyph" role="listitem" title="bcrypt">
-              <i class="bi bi-fingerprint" aria-hidden="true"></i>
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="webpack">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="40" height="40" alt="">
-            </div>
-            <div class="skill-icon-cell" role="listitem" title="Babel">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" width="40" height="40" alt="">
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-tools-marquee-wrap" data-aos="fade-up" data-aos-delay="240">
-          <h3 class="skills-stack-title skills-stack-title--marquee">Tools</h3>
-          <p class="skills-marquee-hint">Deployment, testing, and day-to-day workflow.</p>
-          <div class="tools-marquee" aria-label="Scrolling tools">
+        <div class="skills-tools-marquee-wrap" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="skills-stack-title skills-stack-title--marquee">Tools &amp; Platforms</h3>
+          <p class="skills-marquee-hint">Hover to pause</p>
+          <div class="tools-marquee" aria-label="Development tools and platforms">
             <div class="tools-marquee-track">
               <div class="tools-marquee-set">
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/vercel/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Vercel</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" width="28" height="28" alt=""><span class="tools-marquee-label">Netlify</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/postman/FF6C37" width="28" height="28" alt=""><span class="tools-marquee-label">Postman</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/trello/0079BF" width="28" height="28" alt=""><span class="tools-marquee-label">Trello</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="28" height="28" alt=""><span class="tools-marquee-label">Jira</span></span>
-                <span class="tools-marquee-item tools-marquee-item--text" title="Kiro"><span class="tools-marquee-label">Kiro</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/cursor/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Cursor</span></span>
-                <span class="tools-marquee-item tools-marquee-item--text" title="Windsurf"><span class="tools-marquee-label">Windsurf</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" width="28" height="28" alt=""><span class="tools-marquee-label">Google Agent</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/mamp/4A90E2" width="28" height="28" alt=""><span class="tools-marquee-label">MAMP</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/render/46E3B7" width="28" height="28" alt=""><span class="tools-marquee-label">Render</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" width="28" height="28" alt=""><span class="tools-marquee-label">Supabase</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">GitHub</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Vercel</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Netlify</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Docker</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" width="22"
+                    height="22"><span class="tools-marquee-label">Figma</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">Render</span>
+                <span class="tools-marquee-item tools-marquee-item--text">Groq API</span>
+                <span class="tools-marquee-item tools-marquee-item--text">VS Code</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Postman</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Cypress</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">K6</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="" width="22"
+                    height="22"><span class="tools-marquee-label">Jira</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">TestLink</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Grafana</span></span>
               </div>
               <div class="tools-marquee-set" aria-hidden="true">
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/vercel/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Vercel</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" width="28" height="28" alt=""><span class="tools-marquee-label">Netlify</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/postman/FF6C37" width="28" height="28" alt=""><span class="tools-marquee-label">Postman</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/trello/0079BF" width="28" height="28" alt=""><span class="tools-marquee-label">Trello</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="28" height="28" alt=""><span class="tools-marquee-label">Jira</span></span>
-                <span class="tools-marquee-item tools-marquee-item--text" title="Kiro"><span class="tools-marquee-label">Kiro</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/cursor/000000" width="28" height="28" alt=""><span class="tools-marquee-label">Cursor</span></span>
-                <span class="tools-marquee-item tools-marquee-item--text" title="Windsurf"><span class="tools-marquee-label">Windsurf</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" width="28" height="28" alt=""><span class="tools-marquee-label">Google Agent</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/mamp/4A90E2" width="28" height="28" alt=""><span class="tools-marquee-label">MAMP</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/render/46E3B7" width="28" height="28" alt=""><span class="tools-marquee-label">Render</span></span>
-                <span class="tools-marquee-item"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" width="28" height="28" alt=""><span class="tools-marquee-label">Supabase</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">GitHub</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Vercel</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Netlify</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Docker</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" width="22"
+                    height="22"><span class="tools-marquee-label">Figma</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">Render</span>
+                <span class="tools-marquee-item tools-marquee-item--text">Groq API</span>
+                <span class="tools-marquee-item tools-marquee-item--text">VS Code</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Postman</span></span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Cypress</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">K6</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="" width="22"
+                    height="22"><span class="tools-marquee-label">Jira</span></span>
+                <span class="tools-marquee-item tools-marquee-item--text">TestLink</span>
+                <span class="tools-marquee-item"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt=""
+                    width="22" height="22"><span class="tools-marquee-label">Grafana</span></span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+    </section><!-- /Skills Section -->
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
+        <p class="section-eyebrow">Experience</p>
         <h2>Resume</h2>
-        <p>Full-Stack Developer focused on building scalable web and mobile applications that solve real-world problems
-          and deliver
-          measurable value.</p>
+        <p>Full-Stack Developer &amp; QA Engineer — building scalable applications and mastering software quality
+          assurance.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -522,27 +653,37 @@
               </div>
 
               <h3>Professional Summary</h3>
-              <p>Motivated Full-Stack Developer and Computer Science student at Haramaya University with hands-on
-                experience in building modern web . Skilled in JavaScript, React, Node.js,
-                and relational databases. </p>
+              <p>Full-Stack Developer and QA Engineer with hands-on experience shipping web applications and
+                applying quality assurance practices. Skilled in React, Node.js, Cypress, Postman, K6, Jira, TestLink,
+                and
+                Grafana — with a strong foundation in algorithms, databases, and clean code.</p>
 
               <h3 class="mt-4">Contact Information</h3>
               <ul class="contact-info list-unstyled">
-                <li><i class="bi bi-geo-alt"></i>Harar, Ethiopia</li>
-                <li><i class="bi bi-envelope"></i> naol@naol.online</li>
-                <li><i class="bi bi-phone"></i> +251 913 678 845</li>
-                <li><i class="bi bi-linkedin"></i> linkedin.com/in/naol-gonfa-61b7a9363/</li>
+                <li><i class="bi bi-geo-alt" aria-hidden="true"></i>Harar, Ethiopia</li>
+                <li><i class="bi bi-envelope" aria-hidden="true"></i> <a
+                    href="mailto:naolgonfa39@gmail.com">naolgonfa39@gmail.com</a></li>
+                <li><i class="bi bi-phone" aria-hidden="true"></i> <a href="tel:+251913678845">+251 913 678 845</a></li>
+                <li><i class="bi bi-linkedin" aria-hidden="true"></i> <a
+                    href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank"
+                    rel="noopener noreferrer">linkedin.com/in/naol-gonfa</a></li>
               </ul>
 
-              <div class="resume-skills-text mt-4">
+              <div class="resume-skills-list mt-4">
                 <h3>Technical Skills</h3>
-                <p class="resume-skills-body"><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Bootstrap,
-                  Tailwind CSS.</p>
-                <p class="resume-skills-body"><strong>Backend:</strong> Node.js, Java, C#, PHP, REST APIs.</p>
-                <p class="resume-skills-body"><strong>Database:</strong> MongoDB, Firebase, MySQL, PostgreSQL, Oracle,
-                  Microsoft SQL Server.</p>
-                <p class="resume-skills-body mb-0"><strong>Middleware &amp; tooling:</strong> CORS, body-parser, JWT,
-                  Multer, JWS, OAuth, bcrypt, webpack, Babel.</p>
+                <ul class="resume-skill-tags">
+                  <li>Web Development</li>
+                  <li>Database Systems</li>
+                  <li>QA Engineer</li>
+                  <li>Cypress</li>
+                  <li>Automation Testing</li>
+                  <li>Postman</li>
+                  <li>K6</li>
+                  <li>Jira</li>
+                  <li>TestLink</li>
+                  <li>Grafana</li>
+                  <li>Problem Solving &amp; Algorithms</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -551,56 +692,61 @@
           <div class="col-lg-8 ps-4 ps-lg-5">
             <!-- Experience Section -->
             <div class="resume-section" data-aos="fade-up">
-              <h3><i class="bi bi-briefcase me-2"></i>Professional Experience</h3>
+              <h3><i class="bi bi-briefcase me-2" aria-hidden="true"></i>Professional Experience</h3>
 
               <div class="resume-item">
-                <h4>Student Software Developer — Academic & Personal Projects</h4>
+                <h4>Full-Stack Developer &amp; QA Engineer — Academic & Personal Projects</h4>
                 <h5>2024 – Present</h5>
-                <p class="company"><i class="bi bi-building"></i> Tech Innovations Inc.</p>
+                <p class="company"><i class="bi bi-building" aria-hidden="true"></i> Independent & University Projects
+                </p>
                 <ul>
-                  <li>Developed full-stack web applications using React, Node.js, and REST APIs.</li>
+                  <li>Developed and deployed full-stack web applications using React, Node.js, and REST APIs.</li>
+                  <li>Learning and applying automation testing with Cypress alongside API and load testing via Postman
+                    and K6.</li>
+                  <li>Performed quality checks and issue tracking using Jira and TestLink.</li>
                   <li>Built responsive frontend interfaces using HTML, CSS, Tailwind CSS, and JavaScript.</li>
-                  <li>Designed and implemented relational database systems using SQL and Oracle.</li>
-                  <li>Applied data structures (linked lists, stacks, queues) in C++ for system-based projects.</li>
+                  <li>Designed relational database systems and monitored application health with Grafana.</li>
                 </ul>
-              </div>
-
-
-              <!-- Education Section -->
-              <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
-                <h3><i class="bi bi-mortarboard me-2"></i>Education</h3>
-
-                <div class="resume-item">
-                  <h4>Bachelor of Science in Computer Science</h4>
-                  <h5>2024 – Present</h5>
-                  <p class="company"><i class="bi bi-building"></i> Haramaya University</p>
-                  <p>Expected Graduation: 2027</p>
-                </div>
-
-                <!-- Certifications Section -->
-                <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
-                  <h3><i class="bi bi-award me-2"></i>Relevant Coursework:</h3>
-
-                  <div class="resume-item">
-                    <h4>Data Structures & Algorithms </h4>
-                  </div>
-
-                  <div class="resume-item">
-                    <h4>Database Systems</h4>
-                  </div>
-
-                  <div class="resume-item">
-                    <h4>Object-Oriented Programming</h4>
-                  </div>
-
-                  <div class="resume-item">
-                    <h4>Operating Systems</h4>
-                  </div>
-                </div>
               </div>
             </div>
 
+            <!-- Education Section -->
+            <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
+              <h3><i class="bi bi-mortarboard me-2" aria-hidden="true"></i>Education</h3>
+
+              <div class="resume-item">
+                <h4>Bachelor of Science in Computer Science</h4>
+                <h5>2024 – Present</h5>
+                <p class="company"><i class="bi bi-building" aria-hidden="true"></i> Haramaya University</p>
+                <p>Expected Graduation: 2027</p>
+              </div>
+            </div>
+
+            <!-- Coursework Section -->
+            <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
+              <h3><i class="bi bi-award me-2" aria-hidden="true"></i>Relevant Coursework</h3>
+
+              <div class="resume-item">
+                <h4>Data Structures & Algorithms</h4>
+              </div>
+
+              <div class="resume-item">
+                <h4>Database Systems</h4>
+              </div>
+
+              <div class="resume-item">
+                <h4>Object-Oriented Programming</h4>
+              </div>
+
+              <div class="resume-item">
+                <h4>Operating Systems</h4>
+              </div>
+            </div>
           </div>
+
+        </div>
+
+      </div>
 
     </section><!-- /Resume Section -->
 
@@ -609,10 +755,9 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
+        <p class="section-eyebrow">Selected Work</p>
         <h2>Portfolio</h2>
-        <p>A collection of real-world projects demonstrating my ability to design, develop, and deploy scalable web
-          applications
-          using modern technologies.</p>
+        <p>Real-world projects demonstrating product thinking, full-stack execution, and deployment to production.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -624,185 +769,697 @@
               <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
                 <ul class="portfolio-filters isotope-filters">
                   <li data-filter="*" class="filter-active">All Projects</li>
-                  <li data-filter=".filter-photography ">Web Applications</li>
-                  <li data-filter=".filter-design ">React Projects</li>
-                  <li data-filter=".filter-automotive ">Full-Stack Projects</li>
-                  <li data-filter=".filter-nature ">Academic Systems</li>
+                  <li data-filter=".filter-webapp">Web Applications</li>
+                  <li data-filter=".filter-react">React Projects</li>
+                  <li data-filter=".filter-fullstack">Full-Stack Projects</li>
+                  <li data-filter=".filter-ai">AI Projects</li>
                 </ul>
               </div>
             </div>
 
             <div class="col-lg-9">
               <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/yenebeta2.png" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">YENE BET (Rental PWA)</span>
-                        <h4>A full-stack progressive web app for browsing rental properties, saving favorites, messaging
-                          owners, and managing listings through a dedicated owner dashboard with analytics and map
-                          integration.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/YENE-BETA">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://yenebeta.vercel.app/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
+                <!-- 1. Amazon -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-react filter-fullstack">
                   <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/debugsense.jpg" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Debugsenser AI</span>
-                        <h4>AI-powered system that explains programming errors and provides corrected code using
-                          LLaMA-3.3-70B via Groq API.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/Debugsenser-ai">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://debugsenser-ai-3.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/weather-app.png" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Weather Application</span>
-                        <h4>Real-time weather forecasting app using API integration and responsive UI design.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/WeatherApp">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://weatherapp-5-k3vc.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/bootstrap.jpeg" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Responsive Business Website</span>
-                        <h4>Modern responsive website built with Bootstrap and deployed to production.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/Bootstrap-App-Clone">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://bootstrap-app-clone-1.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automotive">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/react-app.jpeg" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">React Multi-Page Application</span>
-                        <h4>Single-page application using React Router for dynamic navigation and component
-                          architecture.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/React-Apple-Routing">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://react-apple-routing-3.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-nature">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/netflix2.jpeg" class="img-fluid" alt="Portfolio Image"
-                      loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Movie Streaming Web App</span>
-                        <h4>React-based movie streaming platform with API integration and dynamic content rendering.
-                        </h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/movie-streaming-app">
-                            <i class="bi bi-github"></i>
-                          </a>
-                          <a href="https://movie-streaming-app-0p2g.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
-                  <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/amazon.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Amazon.png"
+                      class="img-fluid" alt="E-commerce web application with cart system" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">E-Commerce Web Application </span>
                         <h4>Functional e-commerce platform with product listings, cart system, and responsive design.
                         </h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/React-Amazon-clone">
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/React-Amazon-clone" target="_blank"
+                            rel="noopener noreferrer" aria-label="View source code on GitHub">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://react-ecommerce-app-24et.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
+                          <a href="https://react-ecommerce-app-24et.onrender.com/" target="_blank"
+                            rel="noopener noreferrer" title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
                         </div>
                       </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Modern full-stack e-commerce platform with product browsing,
+                        authentication, shopping cart, secure payments, and order management.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Product catalog &amp; search</li>
+                          <li>Shopping cart &amp; wishlist</li>
+                          <li>Firebase authentication</li>
+                          <li>Stripe payments &amp; order tracking</li>
+                          <li>Responsive design</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React 19, Vite, Firebase, Stripe, Material UI, Axios, Fake Store API</p>
+                      </div>
+                      <p class="portfolio-about-impact">Production-ready e-commerce application with secure payments and
+                        a smooth shopping experience across all devices.</p>
                     </div>
                   </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
+                <!-- 2. Netflix -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-react">
                   <div class="portfolio-wrap">
-                    <img src="/assets/img/portfolio/evan-forum.jpeg" class="img-fluid" alt="Portfolio Image"
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Neflix.png"
+                      class="img-fluid" alt="Movie streaming web application screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Movie Streaming Web App</span>
+                        <h4>React-based movie streaming platform with API integration and dynamic content rendering.
+                        </h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/movie-streaming-app" target="_blank"
+                            rel="noopener noreferrer" aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://movie-streaming-app-0p2g.onrender.com/" target="_blank"
+                            rel="noopener noreferrer" title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Netflix-inspired streaming platform with movie discovery,
+                        search, trailer playback, and a responsive entertainment UI.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Movie categories &amp; carousel</li>
+                          <li>Real-time search</li>
+                          <li>Trailer playback</li>
+                          <li>Interactive UI animations</li>
+                          <li>Responsive layout</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React, JavaScript ES6+, CSS Modules, TMDb API, YouTube API, Material UI</p>
+                      </div>
+                      <p class="portfolio-about-impact">Modern streaming interface with real-time data integration and
+                        optimized performance across devices.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 3. Debug Sense -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-ai filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Debugsense.png"
+                      class="img-fluid" alt="Debugsenser AI error-explanation tool screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Debugsenser AI</span>
+                        <h4>AI-powered system that explains programming errors and provides corrected code using
+                          LLaMA-3.3-70B via Groq API.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Debugsenser-ai" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://debugsenser-ai-3.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">AI-powered debugging assistant that analyzes programming
+                        errors and delivers clear explanations and solutions using LLM technology.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>AI error explanation &amp; stack trace analysis</li>
+                          <li>Debugging suggestions</li>
+                          <li>History dashboard with search &amp; filtering</li>
+                          <li>Dark / light mode</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React, Vite, Tailwind CSS, Node.js, Express, MongoDB, Groq API (LLaMA 3.3)</p>
+                      </div>
+                      <p class="portfolio-about-impact">Helps developers understand errors faster and improves the
+                        debugging learning process.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 4. TrustReview -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-webapp filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Trest%20rewiew.png"
+                      class="img-fluid" alt="TrustReview AI fake review detection platform screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">TrustReview AI</span>
+                        <h4>AI-powered machine learning system that detects fake product reviews using NLP and
+                          classification algorithms.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://trust-review-ai.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">AI-powered machine learning system that detects fake product
+                        reviews using NLP and classification algorithms.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Fake review detection with confidence scoring</li>
+                          <li>Review analysis dashboard</li>
+                          <li>Data visualization &amp; CSV export</li>
+                          <li>Dark mode support</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React, TypeScript, Vite, Tailwind CSS, Flask, Python, Scikit-learn, TF-IDF</p>
+                      </div>
+                      <p class="portfolio-about-impact">Intelligent review verification system that improves trust in
+                        online product feedback.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 5. NileHouse -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-webapp filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Yene%20beta.png"
+                      class="img-fluid" alt="YENE BET rental progressive web app screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">NileHouse (Rental PWA)</span>
+                        <h4>Full-stack Progressive Web App
+                          connecting renters with owners, and managing listings .</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/YENE-BETA" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://yenebeta.vercel.app" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Full-stack Progressive Web App for finding rental properties,
+                        connecting renters with owners, and managing listings through dedicated dashboards.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Property search &amp; filtering</li>
+                          <li>Listing management &amp; favorites</li>
+                          <li>Owner dashboard &amp; admin panel</li>
+                          <li>Real-time messaging</li>
+                          <li>JWT authentication &amp; M-Pesa premium payments</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React 19, TypeScript, Node.js, Express, MongoDB, Redux Toolkit, Tailwind CSS, Leaflet Maps,
+                          JWT, Socket.io</p>
+                      </div>
+                      <p class="portfolio-about-impact">Complete rental marketplace that improves property discovery,
+                        owner management, and renter communication.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 6. Evangadi Forum -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/evan-forum.jpeg"
+                      class="img-fluid" alt="Community Q&A discussion platform screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Evangadi Forum — Community Q&amp;A</span>
+                        <h4>Full-stack Q&A platform with authentication and database integration.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Evan-Forum-frontend" target="_blank"
+                            rel="noopener noreferrer" aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://student-forum-one.vercel.app" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Community-driven Q&amp;A platform where users ask questions,
+                        share knowledge, collaborate, and engage in a secure, high-performance discussion environment.
+                      </p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Question &amp; answer system with voting &amp; bookmarking</li>
+                          <li>User authentication, profiles &amp; reputation tracking</li>
+                          <li>Community dashboard &amp; AI-powered answer summaries</li>
+                          <li>Dark / light mode &amp; responsive design</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React.js, Vite, Node.js, Express.js, PostgreSQL, Prisma ORM, JWT, Helmet.js, Express Rate
+                          Limit, Recharts</p>
+                      </div>
+                      <p class="portfolio-about-impact">Scalable knowledge-sharing platform that improves community
+                        engagement, simplifies problem-solving, and provides a secure environment for collaborative
+                        learning.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 7. UniHub -->
+                <div
+                  class="col-lg-6 col-md-6 portfolio-item portfolio-item--featured isotope-item filter-webapp filter-fullstack filter-react">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Unihub.png"
+                      class="img-fluid" alt="UniHub university collaboration platform screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">UniHub (University Collaboration)</span>
+                        <h4>Full-stack collaboration platform that helps university
+                          students task management with Kanban boards</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/UniHub" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://uni-hub-theta.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Full-stack collaboration platform that helps university
+                        students manage projects, communicate, share resources, and work together efficiently.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>JWT &amp; Google OAuth authentication</li>
+                          <li>Team creation &amp; Kanban task boards</li>
+                          <li>Real-time chat &amp; file sharing</li>
+                          <li>Notifications &amp; analytics dashboard</li>
+                          <li>Admin panel</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React, Tailwind CSS, Vite, Node.js, Express.js, MongoDB, Socket.io, JWT, Google OAuth</p>
+                      </div>
+                      <p class="portfolio-about-impact">Complete student collaboration ecosystem that improves teamwork,
+                        communication, and project management.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 8. Weather App -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-webapp">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Weather%20app%20(2).png"
+                      class="img-fluid" alt="Weather forecasting application screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Weather Application</span>
+                        <h4>Real-time weather forecasting app using API integration and responsive UI design.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/WeatherApp" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://weatherapp-5-k3vc.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Modern weather application that provides real-time weather
+                        information using location services and external weather APIs.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>City weather search &amp; autocomplete</li>
+                          <li>Location-based weather</li>
+                          <li>Temperature &amp; conditions display</li>
+                          <li>Responsive UI &amp; error handling</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>HTML5, CSS3, Tailwind CSS, JavaScript ES6+, OpenWeatherMap API, Geolocation API</p>
+                      </div>
+                      <p class="portfolio-about-impact">Lightweight weather solution demonstrating API integration,
+                        geolocation, and responsive frontend development.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 9. Forecastly -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-ai filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Forecastly.png"
+                      class="img-fluid" alt="Forecastly sales and demand forecasting dashboard screenshot"
                       loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Community Discussion Platform</span>
-                        <h4>Full-stack Q&A platform with authentication and database integration.</h4>
-                        <div class="portfolio-links">
-                          <a href="https://github.com/Naol724/Evan-Forum-frontend">
+                        <span class="category">Forecastly — Sales &amp; Demand Forecasting</span>
+                        <h4>AI-powered sales forecasting platform that helps businesses
+                          predict future sales.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/FUTURE_ML_01" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
                             <i class="bi bi-github"></i>
                           </a>
-                          <a href="https://evan-forum-frontend1.onrender.com/" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
+                          <a href="https://forecastly-frontend.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
                         </div>
                       </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">AI-powered sales forecasting platform that helps businesses
+                        predict future sales and demand using historical data, with accurate forecasts, metrics, and
+                        interactive visual reports.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Sales data CSV upload &amp; automated ML forecasting</li>
+                          <li>Interactive dashboard with actual vs. predicted visualization</li>
+                          <li>Accuracy metrics (MAE, RMSE, R²) &amp; downloadable reports</li>
+                          <li>Forecast history tracking &amp; mobile-responsive design</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>Python, Pandas, NumPy, Scikit-learn, FastAPI, Next.js, TypeScript, Tailwind CSS, MongoDB
+                          Atlas, Render</p>
+                      </div>
+                      <p class="portfolio-about-impact">Complete production-ready ML solution that automates
+                        forecasting, improves sales planning, and enables data-driven business decisions.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 10. Master30 -->
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-webapp filter-fullstack filter-react">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Master30.png"
+                      class="img-fluid" alt="Master30 — 30-Day Business Mastery roadmap dashboard screenshot"
+                      loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Master30 — 30-Day Business Mastery</span>
+                        <h4>An intensive digital workspace for entrepreneurship and wealth building — structured
+                          30-day roadmap with daily tasks, progress tracking, and strategic business planning tools.
+                        </h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Master-30" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://master30-zu8b.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">30-Day Business Mastery (Build Wealth) — a Next.js learning
+                        workspace that guides founders through mindset, customer psychology, business models, and
+                        execution strategy with 3–5 hours of daily structured work across 90–150 total hours.</p>
+                      <div class="portfolio-about-section">
+                        <h5>4-Week Curriculum</h5>
+                        <ul>
+                          <li>Week 1: Millionaire mindset &amp; wealth foundations</li>
+                          <li>Week 2: Customer psychology &amp; market validation</li>
+                          <li>Week 3: Business models &amp; profitability</li>
+                          <li>Week 4: Execution strategy &amp; your wealth plan</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Day-by-day roadmap with milestone checkpoints</li>
+                          <li>Strategic sandboxes, knowledge vault &amp; business canvas</li>
+                          <li>Progress tracking with local storage persistence</li>
+                          <li>Curated book &amp; video resources (Rich Dad Poor Dad, Lean Startup, Mom Test, etc.)</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>By Day 30</h5>
+                        <ul>
+                          <li>Validated business idea &amp; complete business model</li>
+                          <li>Strategic pricing &amp; 5-year wealth vision</li>
+                          <li>90-day action plan with first action taken</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>Next.js, TypeScript, Tailwind CSS v4, Local Storage</p>
+                      </div>
+                      <p class="portfolio-about-impact">A complete entrepreneurship execution system that turns
+                        theoretical business knowledge into daily actionable tasks — from mindset reset to a verified
+                        launch plan.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 11. Nile Cafe -->
+                <div
+                  class="col-lg-6 col-md-6 portfolio-item portfolio-item-more isotope-item filter-react filter-fullstack filter-webapp">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Nile%20cafe.png"
+                      class="img-fluid" alt="Nile Cafe coffee shop web application screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Nile Cafe</span>
+                        <h4>A modern, full-stack coffee shop web application built with React, TypeScript, Node.js, and
+                          MongoDB — featuring a warm, cozy design with mobile-first responsive layout.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Nile-Cafe" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Modern full-stack coffee shop website that showcases products,
+                        menus, and business information through a beautiful, responsive user experience.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Responsive café website with Home, Menu, About &amp; Contact pages</li>
+                          <li>Dynamic menu management &amp; category filtering</li>
+                          <li>RESTful API integration &amp; database-driven content</li>
+                          <li>Mobile-first design with modern UI/UX</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, MongoDB, Mongoose, Axios</p>
+                      </div>
+                      <p class="portfolio-about-impact">Professional online presence for a café with fast, responsive
+                        access to menu information and full-stack development expertise.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 12. EduLearning -->
+                <div
+                  class="col-lg-6 col-md-6 portfolio-item portfolio-item-more isotope-item filter-react filter-fullstack filter-webapp">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Edulearn.png"
+                      class="img-fluid" alt="EduLearning e-learning platform screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">EduLearning — E-Learning Platform</span>
+                        <h4>A full-featured e-learning platform that enables students to
+                          learn online, instructors to manage courses, and administrators to oversee the entire platform
+                        </h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Eduhub-fullstack-App" target="_blank"
+                            rel="noopener noreferrer" aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">Modern Learning Management System that enables students to
+                        learn online, instructors to manage courses, and administrators to oversee the entire platform.
+                      </p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Multi-role system (Student, Instructor, Admin)</li>
+                          <li>Course management, video lessons &amp; assignments</li>
+                          <li>Live chat, notifications &amp; progress analytics</li>
+                          <li>Online payments, AI recommendations &amp; chatbot</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React.js, TypeScript, Node.js, Express.js, MySQL, Firebase, Redux Toolkit, Tailwind CSS, JWT,
+                          Socket.io, Stripe</p>
+                      </div>
+                      <p class="portfolio-about-impact">Complete online learning ecosystem that improves student
+                        engagement, simplifies course management, and supports scalable digital education.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 13. Syntax Software Solutions -->
+                <div
+                  class="col-lg-6 col-md-6 portfolio-item portfolio-item-more isotope-item filter-webapp filter-fullstack filter-react">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Syntax.png"
+                      class="img-fluid" alt="Syntax Software Solutions company website screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Syntax Software Solutions</span>
+                        <h4>Premium corporate website and management platform featuring service showcases,
+                          project portfolios, lead management, and an admin dashboard.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/SYNTAX_03" target="_blank" rel="noopener noreferrer"
+                            aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <a href="https://syntax-03.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            title="View live demo" aria-label="View live demo"><i
+                              class="bi bi-box-arrow-up-right"></i></a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">A premium glassmorphism website for Syntax Software Solutions
+                        — a full-stack software company founded in 2019 in Addis Ababa, Ethiopia. Serves as both a
+                        public
+                        company site and a full-featured admin management system.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Company portfolio &amp; service showcase</li>
+                          <li>Lead and booking management</li>
+                          <li>Blog management &amp; AI chat assistant</li>
+                          <li>Admin dashboard with CMS and analytics</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>Next.js, TypeScript, Tailwind CSS, MongoDB, Mongoose, NextAuth.js, Framer Motion, Recharts,
+                          Gemini AI</p>
+                      </div>
+                      <p class="portfolio-about-impact">Enhanced company branding, improved lead generation, and a
+                        scalable platform for managing business content and client interactions.</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Item -->
+
+                <!-- 14. Flutter Learning Platform -->
+                <div
+                  class="col-lg-6 col-md-6 portfolio-item portfolio-item-more isotope-item filter-webapp filter-fullstack">
+                  <div class="portfolio-wrap">
+                    <img src="https://raw.githubusercontent.com/Naol724/portfolio-assets/main/Flutter.png"
+                      class="img-fluid" alt="Flutter Learning Platform LMS screenshot" loading="lazy">
+                    <div class="portfolio-info">
+                      <div class="content">
+                        <span class="category">Flutter Learning Platform</span>
+                        <h4>Professional LMS designed for Flutter mobile app development
+                          training with progress tracking, assignments, and certification.</h4>
+                        <div class="portfolio-actions">
+                          <a href="https://github.com/Naol724/Flutter-Learning-Platform" target="_blank"
+                            rel="noopener noreferrer" aria-label="View source code on GitHub">
+                            <i class="bi bi-github"></i>
+                          </a>
+                          <button type="button" class="portfolio-about-btn" title="Project details"
+                            aria-label="Project details">Detail</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-about-details">
+                      <p class="portfolio-about-overview">A comprehensive Learning Management System for Flutter mobile
+                        development courses with
+                        responsive design, student progress tracking, video lessons, assignments, and a professional
+                        admin portal.</p>
+                      <div class="portfolio-about-section">
+                        <h5>Key Features</h5>
+                        <ul>
+                          <li>Student dashboard &amp; video-based courses</li>
+                          <li>Assignment submission &amp; progress tracking</li>
+                          <li>Certificate generation</li>
+                          <li>Admin panel with user management &amp; responsive design</li>
+                        </ul>
+                      </div>
+                      <div class="portfolio-about-section">
+                        <h5>Tech Stack</h5>
+                        <p>React.js, Vite, Tailwind CSS, Node.js, Express.js, MySQL, JWT, Multer, Axios, bcrypt</p>
+                      </div>
+                      <p class="portfolio-about-impact">Complete learning environment that helps students master Flutter
+                        development through structured courses and real-time progress monitoring.</p>
                     </div>
                   </div>
                 </div><!-- End Portfolio Item -->
 
               </div><!-- End Portfolio Container -->
+
             </div>
           </div>
 
+        </div><!-- End isotope-layout -->
+
+        <div class="row portfolio-see-more-row">
+          <div class="col-12">
+            <div class="portfolio-see-more-wrap text-center">
+              <button type="button" class="portfolio-see-more-btn" id="portfolio-see-more" aria-expanded="false"
+                aria-controls="portfolio-more-projects">
+                See More Projects
+              </button>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -815,9 +1472,10 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
+        <p class="section-eyebrow">Get in Touch</p>
         <h2>Contact</h2>
-        <p>Interested in working together? Feel free to reach out for freelance projects, collaborations, or internship
-          opportunities.</p>
+        <p>Open to freelance projects, startup collaborations, internships, and engineering roles. Let's build something
+          impactful.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -830,7 +1488,7 @@
 
               <div class="info-item">
                 <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
+                  <i class="bi bi-geo-alt" aria-hidden="true"></i>
                 </div>
                 <div class="content">
                   <h4>Location</h4>
@@ -841,21 +1499,21 @@
 
               <div class="info-item">
                 <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
+                  <i class="bi bi-telephone" aria-hidden="true"></i>
                 </div>
                 <div class="content">
                   <h4>Direct Phone</h4>
-                  <p>+251 913678845</p>
+                  <p><a href="tel:+251913678845">+251 913 678 845</a></p>
                 </div>
               </div>
 
               <div class="info-item">
                 <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
+                  <i class="bi bi-envelope" aria-hidden="true"></i>
                 </div>
                 <div class="content">
                   <h4>Professional Email</h4>
-                  <p>naol@naol.online</p>
+                  <p><a href="mailto:naolgonfa39@gmail.com">naolgonfa39@gmail.com</a></p>
                 </div>
               </div>
             </div>
@@ -866,29 +1524,38 @@
               <h3>Get In Touch</h3>
               <p>Let’s connect! I’m available for projects, collaborations, or any questions you may have.</p>
 
-              <form id="contact-form" class="emailjs-form">
+              <form action="forms/contact.php" method="post" class="php-email-form" aria-label="Contact form">
+                <input type="text" name="hp_field" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <label for="contact-name" class="visually-hidden">Your Name</label>
+                    <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name"
+                      autocomplete="name" required>
                   </div>
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <div class="col-md-6">
+                    <label for="contact-email" class="visually-hidden">Your Email</label>
+                    <input type="email" id="contact-email" class="form-control" name="email" placeholder="Your Email"
+                      autocomplete="email" required>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    <label for="contact-subject" class="visually-hidden">Subject</label>
+                    <input type="text" id="contact-subject" class="form-control" name="subject" placeholder="Subject"
+                      required>
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <label for="contact-message" class="visually-hidden">Message</label>
+                    <textarea id="contact-message" class="form-control" name="message" rows="6" placeholder="Message"
+                      required></textarea>
                   </div>
 
                   <div class="col-12 text-center">
-                    <div class="loading" style="display: none;">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+                    <div class="loading" role="status" aria-live="polite">Sending…</div>
+                    <div class="error-message" role="alert"></div>
+                    <div class="sent-message" role="status">Your message has been sent. Thank you!</div>
 
                     <button type="submit" class="btn">Send Message</button>
                   </div>
@@ -907,15 +1574,57 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span>
-        </p>
+  <!-- Portfolio About Modal -->
+  <div class="modal fade portfolio-about-modal" id="portfolioAboutModal" tabindex="-1"
+    aria-labelledby="portfolioAboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="portfolio-about-modal-title mb-0" id="portfolioAboutModalLabel"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="portfolio-about-modal-image-wrap">
+            <img src="" alt="" class="portfolio-about-modal-image img-fluid">
+          </div>
+          <div class="portfolio-about-modal-content"></div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn btn-outline portfolio-about-modal-github" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i> Source Code
+          </a>
+          <a href="#" class="btn portfolio-about-modal-demo" target="_blank" rel="noopener noreferrer">
+            Live Demo <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="footer-panel">
+        <a href="#hero" class="footer-brand" aria-label="Naol Gonfa — Home">
+          <span class="footer-brand-mark" aria-hidden="true">N</span>
+          <div class="footer-brand-text">
+            <strong>Naol Gonfa</strong>
+            <span>Nilegt · Full-Stack Developer &amp; QA Engineer</span>
+          </div>
+        </a>
+        <div class="footer-links">
+          <a href="https://github.com/Naol724/Naol724" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/naol-gonfa-61b7a9363/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://t.me/nilegt" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
+              class="bi bi-telegram"></i></a>
+          <a href="mailto:naolgonfa39@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright text-center">
+        <p>&copy; <span id="year"></span> <strong>Naol Gonfa</strong>. Crafted with precision. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Scroll Top -->
@@ -926,64 +1635,15 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/php-email-form/validate.js"></script>
-  <script src="/assets/vendor/aos/aos.js"></script>
-  <script src="/assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="/assets/js/main.js?v=3"></script>
-
-  <!-- EmailJS Initialization and Form Handler -->
-  <script type="text/javascript">
-    (function() {
-      emailjs.init("cD54_9oMeTlz_Pfyc"); // Replace with your EmailJS public key
-      
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const loading = this.querySelector('.loading');
-        const errorMessage = this.querySelector('.error-message');
-        const sentMessage = this.querySelector('.sent-message');
-        
-        // Reset messages
-        loading.style.display = 'block';
-        errorMessage.textContent = '';
-        sentMessage.style.display = 'none';
-        
-        // Prepare email parameters
-        const templateParams = {
-          from_name: this.name.value,
-          from_email: this.email.value,
-          subject: this.subject.value,
-          message: this.message.value,
-          to_email: 'naol@naol.online'
-        };
-        
-        // Send email using EmailJS
-        emailjs.send('service_9y2a94a', 'template_fs320pv', templateParams)
-          .then(function(response) {
-            loading.style.display = 'none';
-            sentMessage.style.display = 'block';
-            document.getElementById('contact-form').reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(function() {
-              sentMessage.style.display = 'none';
-            }, 5000);
-          }, function(error) {
-            loading.style.display = 'none';
-            errorMessage.textContent = 'Failed to send message. Please try again later.';
-          });
-      });
-    })();
-  </script>
+  <script src="assets/js/main.js?v=202607190" defer></script>
 
 </body>
 

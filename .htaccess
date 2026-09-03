@@ -1,0 +1,62 @@
+# Hostinger / Apache — Naol Gonfa Portfolio
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirect www to non-www (naol.online)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Dev/source folders — keep in project, block public web access
+  RewriteRule ^assets/scss(/|$) - [F,L,NC]
+  RewriteRule ^assets/img/portfolio[\s%20]+copy(/|$) - [F,L,NC]
+  RewriteRule ^\.git(/|$) - [F,L]
+  RewriteRule ^\.vscode(/|$) - [F,L]
+</IfModule>
+
+# Block directory listing
+Options -Indexes
+
+# Protect local/editor files if accidentally uploaded
+<FilesMatch "^(\.htaccess|\.gitignore|\.env|mail\.config\.local\.php)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Long cache for static assets (version query strings bust cache on deploy)
+  <FilesMatch "\.(css|js|png|jpe?g|webp|gif|svg|woff2?|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML: short cache so updates appear quickly after deploy
+  <FilesMatch "\.(html?)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

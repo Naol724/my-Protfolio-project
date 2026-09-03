@@ -58,7 +58,7 @@ A personal portfolio website for **Naol Gonfa**, Full-Stack Web Developer & AI E
 | Database | MongoDB, MySQL, PostgreSQL, Firebase, Oracle, MSSQL |
 | Styling | SCSS (compiled to CSS), Bootstrap Icons, Google Fonts |
 | Animation | AOS, Typed.js, Swiper, GLightbox, PureCounter |
-| Deployment | Vercel, Netlify |
+| Deployment | Hostinger (PHP), Vercel, Netlify |
 
 ---
 
@@ -76,14 +76,43 @@ sass assets/scss/main.scss assets/css/main.css
 
 ## Contact Form Setup
 
-The contact form uses PHP. To enable it:
+The contact form uses PHP and works on **Hostinger shared hosting**.
 
-1. Upload the project to a PHP-enabled server.
-2. Open `forms/contact.php` and replace the receiving email:
-   ```php
-   $receiving_email_address = 'your@email.com';
+1. Default receiver: `naolgonfa39@gmail.com` (set in `forms/contact.php`).
+2. For reliable delivery on Hostinger, enable SMTP:
+   - In hPanel → **Emails**, create an address (e.g. `hello@naol.online`).
+   - Copy `forms/mail.config.local.php.example` to `forms/mail.config.local.php`.
+   - Set `use_smtp` to `true` and fill in Hostinger SMTP credentials.
+3. Submit the contact form on your live site to test.
+
+---
+
+## Deploy to Hostinger
+
+1. In hPanel → **Files** → **File Manager**, open `public_html`.
+2. Upload all project files (keep this structure):
    ```
-3. Optionally configure SMTP by uncommenting the `$contact->smtp` block.
+   public_html/
+   ├── index.html
+   ├── .htaccess
+   ├── robots.txt
+   ├── sitemap.xml
+   ├── forms/
+   ├── assets/
+   └── (other .html pages if needed)
+   ```
+3. Do **not** upload `.git`, `.vscode`, or `forms/mail.config.local.php.example` only — copy the example to `mail.config.local.php` on the server after creating your email.
+4. Point domain **naol.online** to Hostinger (nameservers or A record in DNS).
+5. Enable **Free SSL** in hPanel → **Security** → **SSL**.
+6. Test: home page, navigation, portfolio filters, theme toggle, and contact form.
+
+| Check | Expected |
+|-------|----------|
+| Homepage | Loads at `https://naol.online/` |
+| Assets | Images, CSS, JS load (no 404s) |
+| Contact form | Shows success message after submit |
+| Mobile menu | Opens/closes on phone |
+| SSL | Padlock in browser |
 
 ---
 

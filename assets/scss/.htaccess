@@ -1,0 +1,4 @@
+# SCSS source files — not served to visitors (site uses assets/css/main.css)
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>

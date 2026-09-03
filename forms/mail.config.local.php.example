@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copy this file to mail.config.local.php on Hostinger and update values.
+ *
+ * Hostinger hPanel → Emails → Create email (e.g. hello@naol.online)
+ * SMTP host: smtp.hostinger.com | Port 465 (SSL) or 587 (TLS)
+ */
+
+return [
+  'receiving_email' => 'naolgonfa39@gmail.com',
+  'use_smtp' => true,
+  'smtp' => [
+    'host' => 'smtp.hostinger.com',
+    'username' => 'hello@naol.online',
+    'password' => 'YOUR_EMAIL_PASSWORD',
+    'port' => 465,
+    'encryption' => 'ssl',
+  ],
+];

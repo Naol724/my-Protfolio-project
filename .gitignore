@@ -1,0 +1,7 @@
+# Local Hostinger mail credentials (never commit passwords)
+forms/mail.config.local.php
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
