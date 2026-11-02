@@ -63,9 +63,13 @@
     'Yene beta.png': 'assets/img/portfolio/Nilehouse.png',
     'evan-forum.jpeg': 'assets/img/portfolio/evan-forum.jpeg',
     'Unihub.png': 'assets/img/portfolio/Unihub.png',
+    'UnihubStudent.png': 'assets/img/portfolio/Unihub.png',
+    'EvanCommunity.png': 'assets/img/portfolio/evan-forum.jpeg',
     'Weather app (2).png': 'assets/img/portfolio/WeatherApp.png',
     'Forecastly.png': 'assets/img/portfolio/Forecasty.png',
     'Resume Screen.png': 'assets/img/portfolio/ResumeScreen.png',
+    'Nile school.png': 'assets/img/portfolio/NileSchool.png',
+    'NileSchool.png': 'assets/img/portfolio/NileSchool.png',
     'Nile cafe.png': 'assets/img/portfolio/NileCafe.png',
     'Edulearn.png': 'assets/img/portfolio/EduLearn.png',
     'Syntax.png': 'assets/img/portfolio/Syntax.png',
@@ -168,6 +172,25 @@
       }
       return true;
     };
+  }
+
+  function applyPortfolioVisibility(categoryFilter) {
+    const portfolio = document.querySelector('#portfolio');
+    const items = document.querySelectorAll('.portfolio-container .portfolio-item.isotope-item');
+    if (!portfolio || !items.length) return;
+
+    const filterClass = categoryFilter && categoryFilter.charAt(0) === '.'
+      ? categoryFilter.slice(1)
+      : '';
+    const expanded = portfolio.classList.contains('portfolio-expanded');
+
+    items.forEach(function(item) {
+      const matchesCategory = !filterClass || item.classList.contains(filterClass);
+      const hiddenBySeeMore = !expanded && item.classList.contains('portfolio-item-more');
+      const shouldShow = matchesCategory && !hiddenBySeeMore;
+      item.classList.toggle('is-filter-hidden', !shouldShow);
+      item.style.display = shouldShow ? '' : 'none';
+    });
   }
 
   /**
@@ -316,86 +339,122 @@
   }
 
   /**
-   * Init isotope layout and filters
+   * Portfolio filters — always work (independent of Isotope)
+   */
+  function refreshPortfolioLayout() {
+    const isotopeContainer = document.querySelector('.portfolio-container.isotope-container');
+    if (!isotopeContainer) return;
+    const categoryFilter = isotopeContainer.dataset.activeFilter || '*';
+    applyPortfolioVisibility(categoryFilter);
+
+    if (typeof Isotope === 'undefined') return;
+    const iso = Isotope.data(isotopeContainer);
+    if (!iso) return;
+    try {
+      iso.options.layoutMode = 'fitRows';
+      iso.arrange({ filter: portfolioItemFilter(categoryFilter) });
+      iso.layout();
+    } catch (err) {
+      console.warn('Portfolio layout refresh skipped:', err);
+    }
+    if (typeof AOS !== 'undefined') AOS.refresh();
+  }
+
+  function initPortfolioFilters() {
+    const portfolioSection = document.querySelector('#portfolio');
+    const isotopeLayout = document.querySelector('#portfolio .isotope-layout');
+    const isotopeContainer = document.querySelector('.portfolio-container.isotope-container');
+    const filterButtons = document.querySelectorAll('#portfolio .portfolio-filters li');
+    if (!portfolioSection || !isotopeContainer || !filterButtons.length) return;
+
+    const defaultFilter = (isotopeLayout && isotopeLayout.getAttribute('data-default-filter')) || '*';
+    isotopeContainer.dataset.activeFilter = defaultFilter;
+    applyPortfolioVisibility(defaultFilter);
+
+    filterButtons.forEach(function(btn) {
+      btn.setAttribute('role', 'button');
+      btn.setAttribute('tabindex', '0');
+
+      function activateFilter() {
+        filterButtons.forEach(function(el) { el.classList.remove('filter-active'); });
+        btn.classList.add('filter-active');
+
+        const nextFilter = btn.getAttribute('data-filter') || '*';
+        isotopeContainer.dataset.activeFilter = nextFilter;
+
+        const seeMoreBtn = document.querySelector('#portfolio-see-more');
+        if (nextFilter !== '*' && !portfolioSection.classList.contains('portfolio-expanded')) {
+          portfolioSection.classList.add('portfolio-expanded');
+          if (seeMoreBtn) {
+            seeMoreBtn.setAttribute('aria-expanded', 'true');
+            seeMoreBtn.textContent = 'Show Less';
+          }
+        }
+
+        refreshPortfolioLayout();
+      }
+
+      btn.addEventListener('click', function(event) {
+        event.preventDefault();
+        activateFilter();
+      });
+
+      btn.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          activateFilter();
+        }
+      });
+    });
+  }
+
+  initPortfolioFilters();
+
+  /**
+   * Init isotope layout (optional helper for desktop grid)
    */
   if (typeof Isotope !== 'undefined') {
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
-    if (!isotopeContainer) return;
+    document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+      const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+      if (!isotopeContainer) return;
 
-    const isPortfolioGrid = isotopeContainer.classList.contains('portfolio-container');
-    let activeCategoryFilter = filter;
+      const isPortfolioGrid = isotopeContainer.classList.contains('portfolio-container');
 
-    function pickLayoutMode() {
-      if (isPortfolioGrid) return 'fitRows';
-      return window.matchMedia('(max-width: 991.98px)').matches ? 'fitRows' : layout;
-    }
-
-    function resolveFilter(categoryFilter) {
-      return isPortfolioGrid ? portfolioItemFilter(categoryFilter) : categoryFilter;
-    }
-
-    let initIsotope;
-    try {
-      initIsotope = new Isotope(isotopeContainer, {
-        itemSelector: '.isotope-item',
-        layoutMode: pickLayoutMode(),
-        filter: resolveFilter(activeCategoryFilter),
-        sortBy: sort,
-        transitionDuration: '0.55s'
-      });
-    } catch (err) {
-      console.warn('Isotope init skipped:', err);
-      return;
-    }
-
-    if (isPortfolioGrid) {
-      isotopeContainer.dataset.activeFilter = activeCategoryFilter;
-      window.requestAnimationFrame(function() {
-        if (initIsotope) initIsotope.layout();
-      });
-    }
-
-    isotopeContainer.querySelectorAll('img').forEach(function(img) {
-      if (img.complete) return;
-      img.addEventListener('load', function() {
-        if (initIsotope) initIsotope.layout();
-      });
-    });
-
-    window.addEventListener('resize', function() {
-      if (!initIsotope) return;
-      const nextMode = pickLayoutMode();
-      if (initIsotope.options.layoutMode !== nextMode) {
-        initIsotope.options.layoutMode = nextMode;
+      function pickLayoutMode() {
+        if (isPortfolioGrid) return 'fitRows';
+        return window.matchMedia('(max-width: 991.98px)').matches ? 'fitRows' : layout;
       }
-      if (isPortfolioGrid) {
-        initIsotope.arrange({ filter: resolveFilter(activeCategoryFilter) });
-      }
-      initIsotope.layout();
-    });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        activeCategoryFilter = this.getAttribute('data-filter') || '*';
-        if (isPortfolioGrid) {
-          isotopeContainer.dataset.activeFilter = activeCategoryFilter;
-        }
-        initIsotope.arrange({
-          filter: resolveFilter(activeCategoryFilter)
+      let initIsotope;
+      try {
+        initIsotope = new Isotope(isotopeContainer, {
+          itemSelector: '.isotope-item',
+          layoutMode: pickLayoutMode(),
+          filter: isPortfolioGrid ? portfolioItemFilter(filter) : filter,
+          sortBy: sort,
+          transitionDuration: '0.45s'
         });
-        if (typeof AOS !== 'undefined') {
-          AOS.refresh();
-        }
-      }, false);
-    });
+      } catch (err) {
+        console.warn('Isotope init skipped:', err);
+        return;
+      }
 
-  });
+      isotopeContainer.querySelectorAll('img').forEach(function(img) {
+        if (img.complete) return;
+        img.addEventListener('load', function() {
+          if (initIsotope) initIsotope.layout();
+        });
+      });
+
+      window.addEventListener('resize', function() {
+        if (!initIsotope) return;
+        initIsotope.options.layoutMode = pickLayoutMode();
+        refreshPortfolioLayout();
+      });
+    });
   }
 
   /**
@@ -410,17 +469,7 @@
     let seeMoreTouchLock = false;
 
     function refreshIsotopeLayout() {
-      if (typeof Isotope === 'undefined') return;
-      const iso = Isotope.data(isotopeContainer);
-      if (!iso) return;
-      const categoryFilter = isotopeContainer.dataset.activeFilter || '*';
-      if (window.matchMedia('(max-width: 991.98px)').matches) {
-        iso.options.layoutMode = 'fitRows';
-      }
-      iso.arrange({ filter: portfolioItemFilter(categoryFilter) });
-      iso.reloadItems();
-      iso.layout();
-      if (typeof AOS !== 'undefined') AOS.refresh();
+      refreshPortfolioLayout();
     }
 
     function togglePortfolioExpanded() {
@@ -940,12 +989,12 @@
       });
 
       const heroStat = document.querySelector('.hero-stat:first-child .hero-stat-value');
-      if (heroStat && heroStat.textContent.trim().startsWith('14')) {
+      if (heroStat && heroStat.textContent.trim().startsWith('16')) {
         const counterObserver = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry) {
             if (!entry.isIntersecting) return;
             let start = 0;
-            const end = 14;
+            const end = 16;
             const duration = 1200;
             const startTime = performance.now();
             function tick(now) {
